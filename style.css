@@ -1,0 +1,27 @@
+@font-face {
+    font-family: 'Raleway';
+    src: url('ressources/polices/Raleway-VariableFont_wght.ttf');
+}
+
+body
+{
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+}
+
+nav
+{
+    display: flex;
+    justify-content: space-between; /*Mettre les éléments le plus loin possible*/
+    align-content: center;
+}
+
+nav ul
+{
+    display: flex;
+    list-style: none;   /*Pas de points dans la liste*/
+}
+
+nav li
+{
+    margin-right: 10px;
+}
