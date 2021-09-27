@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'Raleway';
     src: url('ressources/polices/Raleway-VariableFont_wght.ttf');
@@ -8,20 +9,29 @@ body
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
 }
 
-nav
+header nav
 {
-    display: flex;
-    justify-content: space-between; /*Mettre les éléments le plus loin possible*/
-    align-content: center;
+    border: 5px solid red;
+    display: flex;  /*Passage au flex*/
+    align-items: center;    /*Les éléments s'alignent au centre vertical du conteneur*/
+    justify-content:flex-end;  /*Permet de rassembler les éléments à droite*/
+
+    flex-wrap: wrap;    /*Permet de laisser les éléments s'écouler sur plusieurs lignes*/
 }
 
-nav ul
+#logo   /*ID donc #*/
 {
-    display: flex;
-    list-style: none;   /*Pas de points dans la liste*/
+    margin-right: auto; /*Prend le + de place possible*/
+    padding: 2em;   /*0 2em, reste a determiner..   permet d'éviter que le logo ne soit trop collé à gauche*/
 }
 
-nav li
+#menu_principal
 {
-    margin-right: 10px;
+    display: flex;
+    list-style-type: none;  /*Suppression des puces*/
+}
+
+nav a
+{
+    padding: 2em;   /*Place occuppée par les 3 liens, a un impact sur la place occupée par le nav et le header*/
 }
