@@ -9,7 +9,8 @@ body
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
 }
 
-header nav
+/*PARTIE EN TÊTE*/
+header div
 {
     border: 5px solid red;
     display: flex;  /*Passage au flex*/
@@ -31,7 +32,59 @@ header nav
     list-style-type: none;  /*Suppression des puces*/
 }
 
-nav a
+div a
 {
     padding: 2em;   /*Place occuppée par les 3 liens, a un impact sur la place occupée par le nav et le header*/
+    text-decoration: none;  /*Suppression du texte souligné*/
+    color: #000;    /*Couleur noir et non violette*/
+}
+
+div a:hover
+{
+    border-top: 4px solid #0065fc;  /*Création d'une barre bleu en haut au passage de la souris*/
+    color: #0065fc;
+}
+
+#inscription
+{
+    color: #0065fc;
+    font-weight:bold;
+}
+
+header nav
+{
+    border: solid 4px purple;
+}
+
+
+@media(max-width: 768px)    /*MediaQuery avec 768px, petits écrans par ex*/
+{
+    /*PARTIE EN TÊTE*/
+    header nav
+    {
+        order: 1;   /*Permet de faire en sorte que hebergements et activités se trouvent en dessous de s'inscrire*/
+        width: 100%;
+    }
+
+    header nav li
+    {
+        width: 50%; /*Permet de faire en sorte qu'hébergement et activités occupent chacun la moitié de la place*/
+        text-align: center; /*Met le texte au milieu, ici pas possible d'utiliser de justify-content, car chacun occupe 50%*/
+    }
+
+    div a:hover
+    {
+        border-top: 4px solid transparent;  /*Barre transparente pour cacher la barre bleu du haut*/
+        border-bottom: 4px solid #0065fc;   /*Création barre bleu en bas*/
+    }
+
+    div ul a
+    {
+        border-bottom: 4px solid #f2f2f2 ;  /*Barre grise en version mobile lorsque rien n'est survolé*/
+    }
+}
+
+.recherche
+{
+    padding: 0 2.5em;
 }
