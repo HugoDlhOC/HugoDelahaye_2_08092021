@@ -2,31 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/1dc19a4cc7.js" crossorigin="anonymous"></script>   <!--Script pour fontAwesome-->
+    <link rel="stylesheet" href="style.css">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
     <title>Reservia</title>
 </head>
 <body>
     <!-- En tête de la page -->
     <header>
-        <h1><img src="ressources/images/logo/Reservia.svg" alt="logo"></h1>
-        <nav>
-            <ul>
-                <li>Hébergements</li>
-                <li>Activités</li>
-            </ul>
-        </nav>
-        <a href="#">S'inscrire</a>
+        <div>
+            <img id="logo" src="ressources/images/logo/Reservia.svg" alt="logo">   <!--Id pour le logo car il est unique-->     
+            <nav>
+                <ul id="menu_principal">    <!--Menu-->
+                    <li><a href="#">Hébergements</a></li>
+                    <li><a href="#">Activités</a></li>
+                </ul>
+            </nav>
+            <a href="#" id="inscription">S'inscrire</a> <!--Pour s'inscrire-->
+        </div>
     </header>
 
     <!-- Partie recherche -->
-    <section id="recherche">
-        <h2>Trouvez votre hébergement pour des vacances de rêve</h2>
+    <section class="recherche">
+        <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
         <p>En plein centre ville ou en pleine nature</p>
+        <!--Bloc de saisie, formulaire-->
         <form action="#" method="POST">     <!-- #->@ de la page qui va les récupérer-->
-            <!--ICONE-->
-            <!--SAISIE-->
-            <!--BOUTON_RECHERCHE-->
+            <i class="fas fa-map-marker-alt"></i>
+            <input type="text">
+            <button>Rechercher</button>
         </form>
 
         <div>
