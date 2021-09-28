@@ -84,7 +84,47 @@ header nav
     }
 }
 
+/*PARTIE RECHERCHE*/
+/*FORM RECHERCHE*/
+section h1
+{
+    margin-bottom: -0.4em;  /*Reduction de l'espace entre le titre et le paragraphe*/
+}
+
 .recherche
 {
     padding: 0 2.5em;
+}
+
+.form_recherche
+{
+    display: flex;  /*Colle tous les éléments, éviter de toucher à la marge*/
+    align-items: center;    /*Pour etre sur que tous les éléments soient alignés*/
+}
+
+.recherche .form_recherche i
+{
+    background-color: #f2f2f2;  /*Couleur de fond*/
+    padding: 1em;   /*Place occupée par i*/
+    border-radius: 12px 0px 0px 12px;    /*Lissage des bords de i, sens des aiguilles d'une montre*/
+}
+
+.recherche .form_recherche input
+{
+    border: 1px solid #f2f2f2;
+}
+
+.recherche .form_recherche input::placeholder   /*Modification des paramètres du placeholder de la saisie grâce au pseudo élément ::placeholder*/
+{
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+.recherche .form_recherche button
+{
+    background-color: #0065fc;
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 0px 12px 12px 0px;
+    padding: 1em;   /*Place occupée par le bouton*/
 }
