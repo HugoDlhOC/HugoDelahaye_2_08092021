@@ -102,7 +102,7 @@ section h1
     align-items: center;    /*Pour etre sur que tous les éléments soient alignés*/
 }
 
-.recherche .form_recherche i
+.recherche .form_recherche #position
 {
     background-color: #f2f2f2;  /*Couleur de fond*/
     padding: 1em;   /*Place occupée par i*/
@@ -112,6 +112,7 @@ section h1
 .recherche .form_recherche input
 {
     border: 1px solid #f2f2f2;
+    padding: 1em;
 }
 
 .recherche .form_recherche input::placeholder   /*Modification des paramètres du placeholder de la saisie grâce au pseudo élément ::placeholder*/
@@ -127,4 +128,33 @@ section h1
     font-weight: bold;
     border-radius: 0px 12px 12px 0px;
     padding: 1em;   /*Place occupée par le bouton*/
+}
+
+.recherche .form_recherche #loupe
+{
+    display: none;  /*Pas d'affichage de la loupe quand on est en mode desktop*/
+}
+
+@media(max-width: 768px)    /*MediaQuery avec 768px, petits écrans par ex*/
+{
+    .texte_bouton_rechercher
+    {
+        display: none;
+    }
+
+    .recherche .form_recherche #loupe
+    {
+    display:block;  /*Affichage de la loupe*/
+    padding: 0.6em;
+    }
+
+    .recherche .form_recherche #position
+    {
+        padding: 1.4em;
+    }
+
+    .recherche .form_recherche input
+    {
+        padding: 1.5em;
+    }
 }

@@ -28,9 +28,13 @@
         <p>En plein centre ville ou en pleine nature</p>
         <!--Bloc de saisie, formulaire-->
         <form action="#" method="POST" class="form_recherche">     <!-- #->@ de la page qui va les récupérer-->
-            <i class="fas fa-map-marker-alt"></i>
+            <i class="fas fa-map-marker-alt" id="position"></i>
             <input type="text" placeholder="Marseille, France">
-            <button>Rechercher</button>
+            <button>
+                <span class="texte_bouton_rechercher">Rechercher</span> <!--SPAN pour la notion de responsive avec la loupe-->
+                <i class="fas fa-search" id="loupe"></i>
+            </button>    
+            
         </form>
 
         <div>
