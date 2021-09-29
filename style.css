@@ -158,3 +158,67 @@ section h1
         padding: 1.5em;
     }
 }
+
+/*FILTRES*/
+.filtres
+{
+    display: flex;  /*Pour qu'un bloc d'élément ne prenne pas toute la ligne*/
+    align-items: center;   
+    flex-wrap: wrap;    /*Passage à la ligne des enfants quand ça devient trop petit, pour éviter la déformation des éléments (logo + span dans bordure)*/
+}
+
+.filtres span   /*Tous les span de filtre*/
+{
+    font-weight: bold;
+    padding: 1em;   /*Agrandissement car texte trop serré*/
+}
+#icone  /*Toutes les icones*/
+{
+    color: #0065fc;
+    padding: 1em;   /*Taille du fond*/
+    background-color: #deebff;  /*Arriere plan avec la bonne couleur*/
+    border-radius: 50%; /*Cercle parfait*/
+    margin: -2px;   /*Pour que la bordure ne soit pas visible sur/autour de l'icone*/
+}
+
+.filtres h2
+{
+    margin-right: 1em;
+}
+.filtres .filtre_economique
+{
+    border: 1px solid #d9d9d9;  /*Création de la bordure*/
+    margin-right: 1em;  /*Espacement entre les éléments*/
+    border-radius: 2em; /*Arrondissement de notre bordure*/
+}
+
+.filtres .filtre_familial
+{
+    border: 1px solid #d9d9d9;
+    margin-right: 1em;
+    border-radius: 2em;
+}
+
+.filtres .filtre_romantique
+{
+    border: 1px solid #d9d9d9;
+    margin-right: 1em;
+    border-radius: 2em;
+}
+
+.filtres .filtre_animaux
+{
+    border: 1px solid #d9d9d9;
+    margin-right: 1em;
+    border-radius: 2em;
+}
+
+/*ZONE INFOS*/
+#icone_info
+{
+    color: #0065fc;
+    border: 1px solid #d9d9d9;
+    border-radius: 50%;
+    padding: 0.2em;
+    margin-right: 1em;
+}
