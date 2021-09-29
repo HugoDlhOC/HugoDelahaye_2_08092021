@@ -100,6 +100,7 @@ section h1
 {
     display: flex;  /*Colle tous les éléments, éviter de toucher à la marge*/
     align-items: center;    /*Pour etre sur que tous les éléments soient alignés*/
+    margin-bottom: 1em;
 }
 
 .recherche .form_recherche #position
@@ -214,11 +215,56 @@ section h1
 }
 
 /*ZONE INFOS*/
+.infos
+{
+    display: flex;  /*Pour que l'icone info et le texte se retrouvent ensenbles*/
+    align-items: center;
+}
+
 #icone_info
 {
     color: #0065fc;
-    border: 1px solid #d9d9d9;
+    display: flex;
+    width: 1.5em;
+    height: 1.5em;
+    border: 1px solid #eeeeee;
     border-radius: 50%;
-    padding: 0.2em;
-    margin-right: 1em;
+    align-items: center;
+    justify-content: center;    /*Le logo i est cette fois ci vraiment au milieu*/
+}
+
+/*RESULTATS RECHERCHE*/
+.resultats_recherche .hebergements_proposes
+{
+    border: 1px solid blue;
+    background-color: #f2f2f2;
+    flex-basis: 66%;    /*Occupe 2/3 de la page en horizontale*/
+}
+
+.resultats_recherche h1     
+{
+    margin-bottom: 0em; /*Résoud le problème de la marge car sinon elle est de -0.4em*/
+}
+
+.resultats_recherche .hebergements_populaires
+{
+    border: 1px solid blue;
+    background-color: #f2f2f2;
+    flex-basis: 33%;    /*Occupe 1/3 de la page en horizontale*/
+}
+
+.resultats_recherche
+{
+    display: flex;
+    gap: 1em;   /*La propriété CSS gap définit les espaces (gouttières) entre les lignes et les colonnes.*/
+}
+
+/*Pour pouvoir faire en sorte que le div 'les plus populaires' passent au dessus de 'hebergements à Marseille', j'utilise une Media Query
+L'utilisation de flex-wrap n'était pas possible car les proportions données (66% et 33%) étaient déséquilibrées*/
+@media(max-width: 768px)
+{
+    .resultats_recherche
+    {
+        flex-direction: column-reverse; /*Faire passer les plus populaires en 1er*/
+    }
 }
