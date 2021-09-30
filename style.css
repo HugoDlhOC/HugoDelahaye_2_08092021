@@ -239,11 +239,14 @@ section h1
     border: 1px solid blue;
     background-color: #f2f2f2;
     flex-basis: 66%;    /*Occupe 2/3 de la page en horizontale*/
+    border-radius: 1em; /*Arrondissement des bords*/
+    margin-left: 2em;
 }
 
 .resultats_recherche h1     
 {
     margin-bottom: 0em; /*Résoud le problème de la marge car sinon elle est de -0.4em*/
+    margin-left: 2em;
 }
 
 .resultats_recherche .hebergements_populaires
@@ -251,12 +254,32 @@ section h1
     border: 1px solid blue;
     background-color: #f2f2f2;
     flex-basis: 33%;    /*Occupe 1/3 de la page en horizontale*/
+    border-radius: 1em;
 }
 
 .resultats_recherche
 {
     display: flex;
     gap: 1em;   /*La propriété CSS gap définit les espaces (gouttières) entre les lignes et les colonnes.*/
+}
+
+.resultats_recherche .hebergements_proposes a
+{
+    font-weight: bold;
+}
+
+/*Liste logements*/
+
+.resultats_recherche .hebergements_proposes .liste_logements
+{
+    display: flex;  /*Tous alignés horizontalement*/
+    flex-wrap: wrap;    /*Les éléments peuvent déborder sur plusieurs lignes*/
+    gap: 1em;   /*Espace entre eux*/
+    justify-content: space-around;  /*Espace égal entre les éléments*/
+}
+.resultats_recherche .hebergements_proposes .liste_logements article
+{
+    border: 2px solid red;
 }
 
 /*Pour pouvoir faire en sorte que le div 'les plus populaires' passent au dessus de 'hebergements à Marseille', j'utilise une Media Query
