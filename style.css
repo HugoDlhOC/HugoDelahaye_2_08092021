@@ -23,7 +23,7 @@ header div
 #logo   /*ID donc #*/
 {
     margin-right: auto; /*Prend le + de place possible*/
-    padding: 2em;   /*0 2em, reste a determiner..   permet d'éviter que le logo ne soit trop collé à gauche*/
+    padding: 32px;   /*permet d'éviter que le logo ne soit trop collé à gauche*/
 }
 
 #menu_principal
@@ -34,7 +34,7 @@ header div
 
 div a
 {
-    padding: 2em;   /*Place occuppée par les 3 liens, a un impact sur la place occupée par le nav et le header*/
+    padding: 32px;   /*Place occuppée par les 3 liens, a un impact sur la place occupée par le nav et le header*/
     text-decoration: none;  /*Suppression du texte souligné*/
     color: #000;    /*Couleur noir et non violette*/
 }
@@ -88,32 +88,32 @@ header nav
 /*FORM RECHERCHE*/
 section h1
 {
-    margin-bottom: -0.4em;  /*Reduction de l'espace entre le titre et le paragraphe*/
+    margin-bottom: -6.4px;  /*Reduction de l'espace entre le titre et le paragraphe*/
 }
 
 .recherche
 {
-    padding: 0 2.5em;
+    padding: 0 40px;
 }
 
 .form_recherche
 {
     display: flex;  /*Colle tous les éléments, éviter de toucher à la marge*/
     align-items: center;    /*Pour etre sur que tous les éléments soient alignés*/
-    margin-bottom: 1em;
+    margin-bottom: 16px;
 }
 
 .recherche .form_recherche #position
 {
     background-color: #f2f2f2;  /*Couleur de fond*/
-    padding: 1em;   /*Place occupée par i*/
+    padding: 16px;   /*Place occupée par i*/
     border-radius: 12px 0px 0px 12px;    /*Lissage des bords de i, sens des aiguilles d'une montre*/
 }
 
 .recherche .form_recherche input
 {
     border: 1px solid #f2f2f2;
-    padding: 1em;
+    padding: 16px;
 }
 
 .recherche .form_recherche input::placeholder   /*Modification des paramètres du placeholder de la saisie grâce au pseudo élément ::placeholder*/
@@ -128,7 +128,7 @@ section h1
     color: #ffffff;
     font-weight: bold;
     border-radius: 0px 12px 12px 0px;
-    padding: 1em;   /*Place occupée par le bouton*/
+    padding: 16px;   /*Place occupée par le bouton*/
 }
 
 .recherche .form_recherche #loupe
@@ -146,17 +146,17 @@ section h1
     .recherche .form_recherche #loupe
     {
     display:block;  /*Affichage de la loupe*/
-    padding: 0.6em;
+    padding: 9.6px;
     }
 
     .recherche .form_recherche #position
     {
-        padding: 1.4em;
+        padding: 22.4px;
     }
 
     .recherche .form_recherche input
     {
-        padding: 1.5em;
+        padding: 24px;
     }
 }
 
@@ -171,12 +171,12 @@ section h1
 .filtres span   /*Tous les span de filtre*/
 {
     font-weight: bold;
-    padding: 1em;   /*Agrandissement car texte trop serré*/
+    padding: 16px;   /*Agrandissement car texte trop serré*/
 }
 #icone  /*Toutes les icones*/
 {
     color: #0065fc;
-    padding: 1em;   /*Taille du fond*/
+    padding: 16px;   /*Taille du fond*/
     background-color: #deebff;  /*Arriere plan avec la bonne couleur*/
     border-radius: 50%; /*Cercle parfait*/
     margin: -2px;   /*Pour que la bordure ne soit pas visible sur/autour de l'icone*/
@@ -184,34 +184,34 @@ section h1
 
 .filtres h2
 {
-    margin-right: 1em;
+    margin-right: 16px;
 }
 .filtres .filtre_economique
 {
     border: 1px solid #d9d9d9;  /*Création de la bordure*/
-    margin-right: 1em;  /*Espacement entre les éléments*/
-    border-radius: 2em; /*Arrondissement de notre bordure*/
+    margin-right: 16px;  /*Espacement entre les éléments*/
+    border-radius: 32px; /*Arrondissement de notre bordure*/
 }
 
 .filtres .filtre_familial
 {
     border: 1px solid #d9d9d9;
-    margin-right: 1em;
-    border-radius: 2em;
+    margin-right: 16px;
+    border-radius: 32px;
 }
 
 .filtres .filtre_romantique
 {
     border: 1px solid #d9d9d9;
-    margin-right: 1em;
-    border-radius: 2em;
+    margin-right: 16px;
+    border-radius: 32px;
 }
 
 .filtres .filtre_animaux
 {
     border: 1px solid #d9d9d9;
-    margin-right: 1em;
-    border-radius: 2em;
+    margin-right: 16px;
+    border-radius: 32px;
 }
 
 /*ZONE INFOS*/
@@ -225,8 +225,8 @@ section h1
 {
     color: #0065fc;
     display: flex;
-    width: 1.5em;
-    height: 1.5em;
+    width: 24px;
+    height: 24px;
     border: 1px solid #eeeeee;
     border-radius: 50%;
     align-items: center;
@@ -239,28 +239,19 @@ section h1
     border: 1px solid blue;
     background-color: #f2f2f2;
     flex-basis: 66%;    /*Occupe 2/3 de la page en horizontale*/
-    border-radius: 1em; /*Arrondissement des bords*/
-    margin-left: 2em;
+    border-radius: 16px; /*Arrondissement des bords*/
 }
 
 .resultats_recherche h1     
 {
-    margin-bottom: 0em; /*Résoud le problème de la marge car sinon elle est de -0.4em*/
-    margin-left: 2em;
-}
-
-.resultats_recherche .hebergements_populaires
-{
-    border: 1px solid blue;
-    background-color: #f2f2f2;
-    flex-basis: 33%;    /*Occupe 1/3 de la page en horizontale*/
-    border-radius: 1em;
+    margin-bottom: 0px; /*Résoud le problème de la marge car sinon elle est de -0.4em*/
+    margin-left: 32px;
 }
 
 .resultats_recherche
 {
     display: flex;
-    gap: 1em;   /*La propriété CSS gap définit les espaces (gouttières) entre les lignes et les colonnes.*/
+    gap: 16px;   /*La propriété CSS gap définit les espaces (gouttières) entre les lignes et les colonnes.*/
 }
 
 .resultats_recherche .hebergements_proposes a
@@ -272,14 +263,15 @@ section h1
 
 .resultats_recherche .hebergements_proposes .liste_logements
 {
-    display: flex;  /*Tous alignés horizontalement*/
-    flex-wrap: wrap;    /*Les éléments peuvent déborder sur plusieurs lignes*/
-    gap: 1em;   /*Espace entre eux*/
-    justify-content: space-around;  /*Espace égal entre les éléments*/
+    display: flex;
+    flex-wrap: wrap;    /*Les éléments peuvent s'étendre sur plusieurs lignes*/
+    gap : 16px;
+    justify-content:space-around;   /*Espace égal entre les éléments*/
 }
 .resultats_recherche .hebergements_proposes .liste_logements article
 {
     border: 2px solid red;
+    margin-left: 48px;
 }
 
 /*Pour pouvoir faire en sorte que le div 'les plus populaires' passent au dessus de 'hebergements à Marseille', j'utilise une Media Query
@@ -289,5 +281,67 @@ L'utilisation de flex-wrap n'était pas possible car les proportions données (6
     .resultats_recherche
     {
         flex-direction: column-reverse; /*Faire passer les plus populaires en 1er*/
+    }
+}
+/*Hebergement : Auberge de la Cannebière*/
+.resultats_recherche .hebergements_proposes .liste_logements .logement_1
+{
+    border-radius: 16px;     /* Arrondie sur l'hergement et ses infos*/
+    background-color: #ffffff;
+    padding: 6.4px;     /*Place autour de l'image, pour éviter que l'image soit collée aux bords*/
+}
+
+.resultats_recherche .hebergements_proposes .liste_logements .logement_1 #Auberge_de_la_Cannebiere
+{
+    border-radius: 16px 16px 0px 0px; /*Arrondie sur l'image*/
+    width: 300px;   /*Largeur de l'image adaptée*/
+}
+.resultats_recherche .hebergements_proposes .liste_logements .logement_1 i
+{
+    color : #0065fc;
+}
+
+.resultats_recherche .hebergements_proposes .liste_logements .logement_1 #etoile5
+{
+    color: #d9d9d9;
+}
+
+/*les + populaires (partie en avant sur la version smartphone)*/
+.resultats_recherche .hebergements_populaires
+{
+    border: 1px solid blue;
+    background-color: #f2f2f2;
+    flex-basis: 33%;    /*Occupe 1/3 de la page en horizontale*/
+    border-radius: 16px;
+}
+
+.resultats_recherche .hebergements_populaires .liste_logements_populaires article
+{
+    border: 2px solid red;
+    margin-left: 48px;
+}
+
+.resultats_recherche .hebergements_populaires .liste_logements_populaires
+{
+    display: flex;  
+    flex-direction: column; /*Les éléments passent en row quand on fait display flex, donc je les repasse en column*/
+    gap: 16px;   /*Espacement*/
+    border-left: 16px;
+
+}
+
+@media(max-width: 768px)
+{
+    .resultats_recherche .hebergements_populaires .liste_logements_populaires
+    {
+        flex-direction: row;    /*Affichage en ligne pour smartphone*/
+    }
+}
+
+@media(max-width: 700px)
+{
+    .resultats_recherche .hebergements_populaires .liste_logements_populaires
+    {
+        flex-direction: column;    /*Retour en colonnes*/
     }
 }
