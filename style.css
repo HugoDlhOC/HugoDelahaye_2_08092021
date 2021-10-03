@@ -268,11 +268,24 @@ section h1
     gap : 16px;
     justify-content:space-around;   /*Espace égal entre les éléments*/
 }
+
+.resultats_recherche .hebergements_proposes .liste_logements h3
+{
+    margin: 8px;    /*Réduire l'espace*/
+}
+
+.resultats_recherche .hebergements_proposes .liste_logements p
+{
+    margin: 8px;    /*Réduire l'espace*/
+}
+
 .resultats_recherche .hebergements_proposes .liste_logements article
 {
     border: 2px solid red;
     margin-left: 48px;
+    flex-grow: 1;
 }
+
 
 /*Pour pouvoir faire en sorte que le div 'les plus populaires' passent au dessus de 'hebergements à Marseille', j'utilise une Media Query
 L'utilisation de flex-wrap n'était pas possible car les proportions données (66% et 33%) étaient déséquilibrées*/
@@ -283,19 +296,23 @@ L'utilisation de flex-wrap n'était pas possible car les proportions données (6
         flex-direction: column-reverse; /*Faire passer les plus populaires en 1er*/
     }
 }
-/*Hebergement : Auberge de la Cannebière*/
-.resultats_recherche .hebergements_proposes .liste_logements .logement_1
+
+/*Hébergement : pour tous*/
+.resultats_recherche .hebergements_proposes .liste_logements article
 {
     border-radius: 16px;     /* Arrondie sur l'hergement et ses infos*/
     background-color: #ffffff;
     padding: 6.4px;     /*Place autour de l'image, pour éviter que l'image soit collée aux bords*/
 }
 
-.resultats_recherche .hebergements_proposes .liste_logements .logement_1 #Auberge_de_la_Cannebiere
+.resultats_recherche .hebergements_proposes .liste_logements article img
 {
     border-radius: 16px 16px 0px 0px; /*Arrondie sur l'image*/
-    width: 300px;   /*Largeur de l'image adaptée*/
+    height: 200px;
+    width: 100%;    /*Occupe la totalité de l'espace accordé*/
+    object-fit: cover; /*Le contenu remplacé est dimensionné pour conserver son rapport hauteur/largeur tout en remplissant l'intégralité de la zone de contenu de l'élément*/
 }
+/*Hebergement : Auberge de la Cannebière*/
 .resultats_recherche .hebergements_proposes .liste_logements .logement_1 i
 {
     color : #0065fc;
@@ -304,6 +321,56 @@ L'utilisation de flex-wrap n'était pas possible car les proportions données (6
 .resultats_recherche .hebergements_proposes .liste_logements .logement_1 #etoile5
 {
     color: #d9d9d9;
+}
+
+/*Hebergement : Hôtel du port*/
+.resultats_recherche .hebergements_proposes .liste_logements .logement_2 i
+{
+    color : #0065fc;
+}
+
+/*Hebergement : Hôtel Les mouettes*/
+.resultats_recherche .hebergements_proposes .liste_logements .logement_3 i
+{
+    color : #0065fc;
+}
+
+.resultats_recherche .hebergements_proposes .liste_logements .logement_3 #etoile5
+{
+    color: #d9d9d9;
+}
+
+/*Hebergement : Hôtel de la mer*/
+.resultats_recherche .hebergements_proposes .liste_logements .logement_4 i
+{
+    color : #0065fc;
+}
+
+.resultats_recherche .hebergements_proposes .liste_logements .logement_4 #etoile5
+{
+    color: #d9d9d9;
+}
+
+.resultats_recherche .hebergements_proposes .liste_logements .logement_4 #etoile4
+{
+    color: #d9d9d9;
+}
+
+/*Hebergement : Auberge Le Panier*/
+.resultats_recherche .hebergements_proposes .liste_logements .logement_5 i
+{
+    color : #0065fc;
+}
+
+.resultats_recherche .hebergements_proposes .liste_logements .logement_5 #etoile5
+{
+    color: #d9d9d9;
+}
+
+/*Hebergement : Hôtel chez Amina*/
+.resultats_recherche .hebergements_proposes .liste_logements .logement_6 i
+{
+    color : #0065fc;
 }
 
 /*les + populaires (partie en avant sur la version smartphone)*/
@@ -319,6 +386,7 @@ L'utilisation de flex-wrap n'était pas possible car les proportions données (6
 {
     border: 2px solid red;
     margin-left: 48px;
+    display: flex;  /*Flex car des éléments sont à droite, disposition différente des hébergements à Marseille*/
 }
 
 .resultats_recherche .hebergements_populaires .liste_logements_populaires
@@ -327,7 +395,34 @@ L'utilisation de flex-wrap n'était pas possible car les proportions données (6
     flex-direction: column; /*Les éléments passent en row quand on fait display flex, donc je les repasse en column*/
     gap: 16px;   /*Espacement*/
     border-left: 16px;
+}
 
+.resultats_recherche .hebergements_populaires .liste_logements_populaires img
+{
+    border-radius: 16px 0px 0px 16px; /*Arrondie sur l'image*/
+    height: 200px;
+    object-fit: cover;
+}
+
+.resultats_recherche .hebergements_populaires .liste_logements_populaires .informations_hebergement
+{
+    display: flex;  /*Pour gérer les emplacements des 3 éléments (h3, p, étoiles que l'on veut mettre en bas*/
+    flex-direction: column;
+}
+
+.resultats_recherche .hebergements_populaires .liste_logements_populaires h3
+{
+    margin: 8px;    
+}
+
+.resultats_recherche .hebergements_populaires .liste_logements_populaires p
+{
+    margin: 8px; 
+}
+
+.resultats_recherche .hebergements_populaires .liste_logements_populaires .etoiles
+{
+    margin-top: auto;   /*Les étoiles sont en bas*/
 }
 
 @media(max-width: 768px)
