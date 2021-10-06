@@ -7,12 +7,12 @@
 body
 {
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    margin: 0;
 }
 
 /*PARTIE EN TÊTE*/
 header div
 {
-    border: 5px solid red;
     display: flex;  /*Passage au flex*/
     align-items: center;    /*Les éléments s'alignent au centre vertical du conteneur*/
     justify-content:flex-end;  /*Permet de rassembler les éléments à droite*/
@@ -53,7 +53,7 @@ div a:hover
 
 header nav
 {
-    border: solid 4px purple;
+    
 }
 
 
@@ -236,11 +236,12 @@ section h1
 /*RESULTATS RECHERCHE*/
 .resultats_recherche .hebergements_proposes
 {
-    border: 1px solid blue;
+
     background-color: #f2f2f2;
     flex-basis: 66%;    /*Occupe 2/3 de la page en horizontale*/
     border-radius: 16px; /*Arrondissement des bords*/
     padding: 16px;
+    margin-bottom: 60px;
 }
 
 .resultats_recherche h1     
@@ -281,7 +282,6 @@ section h1
 
 .resultats_recherche .hebergements_proposes .liste_logements article
 {
-    border: 2px solid red;
     flex-grow: 1;
 }
 
@@ -376,7 +376,6 @@ L'utilisation de flex-wrap n'était pas possible car les proportions données (6
 /*les + populaires (partie en avant sur la version smartphone)*/
 .resultats_recherche .hebergements_populaires
 {
-    border: 1px solid blue;
     background-color: #f2f2f2;
     flex-basis: 33%;    /*Occupe 1/3 de la page en horizontale*/
     border-radius: 16px;
@@ -384,6 +383,7 @@ L'utilisation de flex-wrap n'était pas possible car les proportions données (6
     
     display: flex;
     flex-direction: column;
+    margin-bottom: 60px;
 }
 .resultats_recherche .hebergements_populaires h1
 {
@@ -392,7 +392,6 @@ L'utilisation de flex-wrap n'était pas possible car les proportions données (6
 }
 .resultats_recherche .hebergements_populaires .liste_logements_populaires article
 {
-    border: 2px solid red;
     display: flex;  /*Flex car des éléments sont à droite, disposition différente des hébergements à Marseille*/
     padding: 8px;
     background-color: #ffffff;
@@ -451,96 +450,154 @@ L'utilisation de flex-wrap n'était pas possible car les proportions données (6
 }
 
 /*PARTIE ACTIVITES*/
-.activites_proposees .grid_activites > *
+.activites_proposees .galerie article
 {
-    background-size: cover;
+    background-color: aqua;
+    border-radius: 16px;
 }
 
-.activites_proposees .grid_activites
+.activites_proposees .galerie
 {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(10rem, 20rem));
+    /*height: 100vh;*/
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(10, 1fr);
     grid-template-areas: 
-    "vieux_port         fort_de_pomegues        parc_national_des_calanques         notre_dame_de_la_garde"
-    "vieux_port         fort_de_pomegues        parc_national_des_calanques         notre_dame_de_la_garde"
-    "vieux_port         fort_de_pomegues        parc_national_des_calanques         notre_dame_de_la_garde"
-    "vieux_port         fort_de_pomegues        parc_national_des_calanques         notre_dame_de_la_garde"
-    "vieux_port         fort_de_pomegues        parc_national_des_calanques         notre_dame_de_la_garde"
-    "vieux_port         fort_de_pomegues        parc_national_des_calanques         parc_longchamp"
-    "vieux_port         iles_du_frioul          parc_national_des_calanques         parc_longchamp"
-    "vieux_port         iles_du_frioul          parc_national_des_calanques         parc_longchamp"
-    "vieux_port         iles_du_frioul          parc_national_des_calanques         parc_longchamp"
-    "vieux_port         iles_du_frioul          parc_national_des_calanques         parc_longchamp"
-    ;
-    justify-content: center;
-    column-gap: 44px;
-    row-gap: 44px;
-}
+        "vieux_port         fort_de_pomegues        parc_national_des_calanques        notre_dame_de_la_garde"
+        "vieux_port         fort_de_pomegues        parc_national_des_calanques        notre_dame_de_la_garde"
+        "vieux_port         fort_de_pomegues        parc_national_des_calanques        notre_dame_de_la_garde"
+        "vieux_port         fort_de_pomegues        parc_national_des_calanques        notre_dame_de_la_garde"
+        "vieux_port         fort_de_pomegues        parc_national_des_calanques        notre_dame_de_la_garde"
+        "vieux_port         fort_de_pomegues        parc_national_des_calanques        parc_longchamp"
+        "vieux_port         iles_du_frioul          parc_national_des_calanques        parc_longchamp"
+        "vieux_port         iles_du_frioul          parc_national_des_calanques        parc_longchamp"
+        "vieux_port         iles_du_frioul          parc_national_des_calanques        parc_longchamp"
+        "vieux_port         iles_du_frioul          parc_national_des_calanques        parc_longchamp";
 
-.activites_proposees .grid_activites article
+    grid-gap: 32px; /*Espacement*/
+    margin-bottom: 50px;
+
+}
+.galerie > *    /*Tous les enfants directs*/
 {
+    background-size: cover;
     display: flex;
-    flex-direction: column;
+    margin-bottom: 0;
+    background-position: center;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;  /*Ombres*/
 }
 
-.activites_proposees .grid_activites h4
-{
-    margin-top: auto;
-    background-color: #ffffff;
-    margin-bottom: 0px;
-}
-
-/*Grandes images*/
-.activites_proposees .grid_activites .vieux_port
+#vieux_port
 {
     grid-area: vieux_port;
-    height: 480px; 
     background-image: url("ressources/images/activites/4_small/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg");
-    
+    height: 40rem;
 }
 
-.activites_proposees .grid_activites .parc_national_des_calanques
-{
-    grid-area: parc_national_des_calanques;
-    height: 480px; 
-    background-image: url("ressources/images/activites/4_small/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg");
-}
-
-/*Moyennes images*/
-.activites_proposees .grid_activites .fort_de_pomegues
+#fort_de_pomegues
 {
     grid-area: fort_de_pomegues;
     background-image: url("ressources/images/activites/4_small/paul-hermann-QFTrLdQIRhI-unsplash.jpg");
 }
 
-.activites_proposees .grid_activites .parc_longchamp
-{
-    grid-area: parc_longchamp;
-    background-image: url("ressources/images/activites/4_small/lena-paulin-wH2-EJoDcV0-unsplash.jpg");
-}
-
-/*Petites images*/
-.activites_proposees .grid_activites .iles_du_frioul
+#iles_du_frioul
 {
     grid-area: iles_du_frioul;
     background-image: url("ressources/images/activites/4_small/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg");
 }
 
-.activites_proposees .grid_activites .notre_dame_de_la_garde
+#parc_national_des_calanques
+{
+    grid-area: parc_national_des_calanques;
+    background-image: url("ressources/images/activites/4_small/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg");
+}
+
+#notre_dame_de_la_garde
 {
     grid-area: notre_dame_de_la_garde;
     background-image: url("ressources/images/activites/4_small/florian-wehde-xW9e8gdotxI-unsplash.jpg");
 }
 
-/*
-@media (max-width:1500px)
+#parc_longchamp
 {
-    .activites_proposees .grid_activites > *
+    grid-area: parc_longchamp;
+    background-image: url("ressources/images/activites/4_small/lena-paulin-wH2-EJoDcV0-unsplash.jpg");
+}
+
+.galerie .texte_item 
+{
+    background-color: white;
+    margin-top: auto;/*Texte en bas, il va prendre le max de place qu'il peut en haut, utilisable avec flexBox*/
+    width: 100%;    /*Le texte occupe toute la largeur (blanc)*/
+    border-radius: 0 0 16px 16px;
+}
+
+@media (max-width:550px)
+{
+    .activites_proposees .galerie
     {
-        grid-column: span 1;
-        grid-row: span 1;
-        background: mediumslateblue;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: 
+            "vieux_port"
+            "fort_de_pomegues"
+            "iles_du_frioul"
+            "parc_national_des_calanques"
+            "notre_dame_de_la_garde"
+            "parc_longchamp";
+        
+            background-color: yellow;
+    }
+
+    #vieux_port
+    {
+        height: 15rem;
+    }
+
+    .galerie > *
+    {
+        height: 15rem;
+    }
+    
+}
+
+/*PARTIE FOOTER*/
+footer
+{
+    background-color: #f2f2f2;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+footer li
+{
+    list-style-type: none;  /*Suppression des puces*/
+    margin-bottom: 14px;
+}
+
+footer ul
+{
+    padding-left: 0;    /*Suppression padding créé par les points de la liste*/
+}
+
+footer a
+{
+    color: rgb(0, 0, 0);
+    text-decoration: none;  /*Supression soulignement*/
+}
+
+footer > *
+{
+    padding: 16px;
+    flex-basis: 25%;    /*Place occupée par chacun*/
+    margin-bottom: 40px;
+}
+
+@media(max-width: 768px)  
+{
+    footer
+    {
+        flex-direction: column;
     }
 }
-*/
