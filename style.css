@@ -132,8 +132,9 @@ header div a:hover
 .filtres
 {
     display: flex;  /*Pour qu'un bloc d'élément ne prenne pas toute la ligne*/
-    align-items: center;   
+    align-items: baseline;   
     flex-wrap: wrap;    /*Passage à la ligne des enfants quand ça devient trop petit, pour éviter la déformation des éléments (logo + span dans bordure)*/
+    list-style-type: none;  /*Suppression des puces*/
 }
 
 .filtres .texte_filtre   /*Tous les span de filtre*/
@@ -165,7 +166,7 @@ header div a:hover
     margin-bottom: 16px;
 }
 
-.filtres div:hover
+.filtres li:hover
 {
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -259,6 +260,7 @@ header div a:hover
     background-color: #ffffff;
     padding: 6.4px;     /*Place autour de l'image, pour éviter que l'image soit collée aux bords*/
     width: 25%; /*Résolution pb des images qui n'étaient pas de meme dimension*/
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;  /*Ombres*/
 }
 
 .resultats_recherche .hebergements_proposes .liste_logements article a
@@ -309,6 +311,7 @@ header div a:hover
     border-radius: 16px;
     min-width: 240px;   /*Pour ne pas que le texte ne s'étale trop en dessous */
     height: 100%;   /*Occupe toute la place disponible*/
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;  /*Ombres*/
 
 }
 
@@ -569,10 +572,6 @@ footer > *
     .resultats_recherche .hebergements_populaires .liste_logements_populaires
     {
         flex-direction: column;    /*Retour en colonnes*/
-    }
-    .resultats_recherche .hebergements_populaires .liste_logements_populaires article
-    {
-        /*flex-wrap: wrap;*/
     }
 
     /*RESULTAT RECHERCHE : HEBERGEMENTS PROPOSES*/
