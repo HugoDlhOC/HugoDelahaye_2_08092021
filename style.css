@@ -26,7 +26,7 @@ header
 header div
 {
     display: flex;  /*Passage au flex*/
-    align-items: center;
+    align-items: center;    /*Centrer les éléments*/
     justify-content: flex-end;
     flex-wrap: wrap;    /*Permet de laisser les éléments s'écouler sur plusieurs lignes*/
     /*border: 3px solid transparent*/
@@ -53,6 +53,11 @@ header div a
     border-top: 4px solid transparent;
 }
 
+#lien_hebergements
+{
+    border-top: 4px solid #0065fc;  /*Création d'une barre bleu en haut au passage de la souris*/
+    color: #0065fc;
+}
 header div a:hover
 {
     border-top: 4px solid #0065fc;  /*Création d'une barre bleu en haut au passage de la souris*/
@@ -64,6 +69,7 @@ header div a:hover
     color: #0065fc;
     font-weight:bold;
 }
+
 
 
 /*PARTIE RECHERCHE*/
@@ -147,7 +153,7 @@ header div a:hover
 
 .filtres h2
 {
-    margin-right: 75px;
+    margin-right: 75px; /*Faire passer les filtres en dessous du h2*/
 }
 .filtres .filtre_box
 {
@@ -515,16 +521,9 @@ footer > *
     }
 
     /*PARTIE EN TÊTE*/
-    header nav
+    #lien_hebergements
     {
-        order: 1;   /*Permet de faire en sorte que hebergements et activités se trouvent en dessous de s'inscrire*/
-        width: 100%;
-    }
-
-    header nav li
-    {
-        width: 50%; /*Permet de faire en sorte qu'hébergement et activités occupent chacun la moitié de la place*/
-        text-align: center; /*Met le texte au milieu, ici pas possible d'utiliser de justify-content, car chacun occupe 50%*/
+        border-top: none;
     }
 
     header div a:hover
@@ -552,18 +551,18 @@ footer > *
 
     .recherche .form_recherche #loupe
     {
-    display:block;  /*Affichage de la loupe*/
+    display:contents;  /*Affichage de la loupe*/
     padding: 9.6px;
     }
 
     .recherche .form_recherche #position
     {
-        padding: 22.4px;
+        padding: 15px;
     }
 
     .recherche .form_recherche input
     {
-        padding: 24px;
+        padding: 15px;
     }
 
     /*RESULTAT RECHERCHE : HEBERGEMENT POPULAIRES*/
