@@ -147,7 +147,7 @@ header div a:hover
 
 .filtres h2
 {
-    margin-right: 16px;
+    margin-right: 75px;
 }
 .filtres .filtre_box
 {
@@ -156,6 +156,7 @@ header div a:hover
     border-radius: 32px; /*Arrondissement de notre bordure*/
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.2s;
+    margin-bottom: 16px;
 }
 
 .filtres div:hover
@@ -570,6 +571,11 @@ footer > *
     {
         flex-direction: column;    /*Retour en colonnes*/
     }
+    .resultats_recherche .hebergements_populaires .liste_logements_populaires article
+    {
+        /*flex-wrap: wrap;*/
+    }
+
     /*RESULTAT RECHERCHE : HEBERGEMENTS PROPOSES*/
     .resultats_recherche .hebergements_proposes .liste_logements
     {
