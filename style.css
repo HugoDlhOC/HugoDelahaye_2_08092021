@@ -29,12 +29,13 @@ header div
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap;    /*Permet de laisser les éléments s'écouler sur plusieurs lignes*/
+    /*border: 3px solid transparent*/
+
 }
 
 #logo   /*ID donc #*/
 {
     margin-right: auto; /*Prend le + de place possible*/
-
 }
 
 #menu_principal
@@ -48,7 +49,8 @@ header div a
     padding: 32px;   /*Place occuppée par les 3 liens, a un impact sur la place occupée par le nav et le header*/
     text-decoration: none;  /*Suppression du texte souligné*/
     color: #000;    /*Couleur noir et non violette*/
-    display: flex;
+    /*display: flex;*/
+    border-top: 4px solid transparent;
 }
 
 header div a:hover
@@ -62,7 +64,6 @@ header div a:hover
     color: #0065fc;
     font-weight:bold;
 }
-
 
 
 /*PARTIE RECHERCHE*/
@@ -80,6 +81,12 @@ header div a:hover
     background-color: #f2f2f2;  /*Couleur de fond*/
     padding: 16px;   /*Place occupée par i*/
     border-radius: 12px 0px 0px 12px;    /*Lissage des bords de i, sens des aiguilles d'une montre*/
+}
+
+.recherche .form_recherche #position:hover
+{
+    background-color: #d3d3d3;
+    cursor: pointer;
 }
 
 .recherche .form_recherche input
@@ -101,6 +108,12 @@ header div a:hover
     font-weight: bold;
     border-radius: 0px 12px 12px 0px;
     padding: 16px;   /*Place occupée par le bouton*/
+}
+
+.recherche .form_recherche button:hover
+{
+    background-color: #1755b3;
+    cursor: pointer;
 }
 
 .recherche .form_recherche #loupe
@@ -136,34 +149,23 @@ header div a:hover
 {
     margin-right: 16px;
 }
-.filtres .filtre_economique
+.filtres .filtre_box
 {
     border: 1px solid #d9d9d9;  /*Création de la bordure*/
     margin-right: 16px;  /*Espacement entre les éléments*/
     border-radius: 32px; /*Arrondissement de notre bordure*/
-    
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.2s;
 }
 
-.filtres .filtre_familial
+.filtres div:hover
 {
-    border: 1px solid #d9d9d9;
-    margin-right: 16px;
-    border-radius: 32px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
 }
 
-.filtres .filtre_romantique
-{
-    border: 1px solid #d9d9d9;
-    margin-right: 16px;
-    border-radius: 32px;
-}
-
-.filtres .filtre_animaux
-{
-    border: 1px solid #d9d9d9;
-    margin-right: 16px;
-    border-radius: 32px;
-}
 
 /*ZONE INFOS*/
 .infos
@@ -262,6 +264,16 @@ header div a:hover
     height: 200px;
     width: 100%;    /*Occupe la totalité de l'espace accordé*/
     object-fit: cover; /*Le contenu remplacé est dimensionné pour conserver son rapport hauteur/largeur tout en remplissant l'intégralité de la zone de contenu de l'élément*/
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.2s;
+}
+
+.resultats_recherche .hebergements_proposes .liste_logements article img:hover
+{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
 }
 
 /*les + populaires (partie en avant sur la version smartphone)*/
@@ -308,6 +320,16 @@ header div a:hover
     height: 200px;
     object-fit: cover;
     width: 200px;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.2s;
+}
+
+.resultats_recherche .hebergements_populaires .liste_logements_populaires img:hover
+{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
 }
 
 .resultats_recherche .hebergements_populaires .liste_logements_populaires .informations_hebergement
@@ -350,6 +372,7 @@ header div a:hover
     text-decoration: none;
     color: black;
 }
+
 .activites_proposees h2
 {
     margin-bottom: 32px;
@@ -386,12 +409,26 @@ header div a:hover
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;  /*Ombres*/
 }
 
+.galerie a
+{
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.2s;
+}
+
+.galerie a:hover
+{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+}
+
+
 #vieux_port
 {
     grid-area: vieux_port;
     background-image: url("ressources/images/activites/3_medium/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg");
     height: 40rem;
-    
 }
 
 #fort_de_pomegues

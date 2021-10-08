@@ -14,8 +14,8 @@
             <img id="logo" src="ressources/images/logo/Reservia.svg" alt="Reservia">  <!--Id pour le logo car il est unique-->     
             <nav>
                 <ul id="menu_principal">    <!--Menu-->
-                    <li><a href="#">Hébergements</a></li>
-                    <li><a href="#">Activités</a></li>
+                    <li><a href="#ancre_hebergements">Hébergements</a></li>
+                    <li><a href="#ancre_activites">Activités</a></li>
                 </ul>
             </nav>
             <a href="#" id="inscription">S'inscrire</a> <!--Pour s'inscrire-->
@@ -39,19 +39,19 @@
             <!--Application des filtres-->
                 <div class="filtres">
                     <h2>Filtres</h2>
-                    <div class="filtre_economique">
+                    <div class="filtre_box">
                         <span class="icone_filtre"><i class="fas fa-money-bill-wave"></i></span>
                         <span class="texte_filtre">Économique</span> <!--SPAN pour que ça soit sur la même ligne que l'icone-->
                     </div>
-                    <div class="filtre_familial">
+                    <div class="filtre_box">
                         <span class="icone_filtre"><i class="fas fa-child"></i></span>
                         <span class="texte_filtre">Familial</span> <!--SPAN pour que ça soit sur la même ligne que l'icone-->
                     </div>
-                    <div class="filtre_romantique">
+                    <div class="filtre_box">
                         <span class="icone_filtre"><i class="fas fa-heart"></i></span>
                         <span class="texte_filtre">Romantique</span> <!--SPAN pour que ça soit sur la même ligne que l'icone-->
                     </div>
-                    <div class="filtre_animaux">
+                    <div class="filtre_box">
                         <span class="icone_filtre"><i class="fas fa-dog"></i></span>
                         <span class="texte_filtre">Animaux autorisés</span> <!--SPAN pour que ça soit sur la même ligne que l'icone-->
                     </div>
@@ -67,7 +67,7 @@
         </section>
 
         <!-- Partie résultats de la recherche/les plus populaires -->
-        <section class="resultats_recherche">
+        <section class="resultats_recherche" id="ancre_hebergements">
             <div class="hebergements_proposes">
                 <h2>Hébergements à Marseille</h2>
                 <div class="liste_logements">
@@ -198,7 +198,7 @@
         </section>
 
         <!-- Partie activités proposées par apport au lieu recherché -->
-        <section class="activites_proposees">
+        <section class="activites_proposees" id="ancre_activites">
             <h2>Activités à Marseille</h2>
             
             <div class="galerie">
