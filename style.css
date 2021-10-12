@@ -23,7 +23,7 @@ header
     margin-right: 120px;
 }
 
-header div
+header
 {
     display: flex;  /*Passage au flex*/
     align-items: center;    /*Centrer les éléments*/
@@ -36,6 +36,9 @@ header div
 #logo   /*ID donc #*/
 {
     margin-right: auto; /*Prend le + de place possible*/
+    position: absolute;
+    top: 22px;
+    left: 20px;
 }
 
 #menu_principal
@@ -44,7 +47,7 @@ header div
     list-style-type: none;  /*Suppression des puces*/
 }
 
-header div a
+header a
 {
     padding: 32px;   /*Place occuppée par les 3 liens, a un impact sur la place occupée par le nav et le header*/
     text-decoration: none;  /*Suppression du texte souligné*/
@@ -58,7 +61,7 @@ header div a
     border-top: 4px solid #0065fc;  /*Création d'une barre bleu en haut au passage de la souris*/
     color: #0065fc;
 }
-header div a:hover
+header a:hover
 {
     border-top: 4px solid #0065fc;  /*Création d'une barre bleu en haut au passage de la souris*/
     color: #0065fc;
@@ -114,6 +117,7 @@ header div a:hover
     font-weight: bold;
     border-radius: 0px 12px 12px 0px;
     padding: 16px;   /*Place occupée par le bouton*/
+    border: none;
 }
 
 .recherche .form_recherche button:hover
@@ -131,6 +135,7 @@ header div a:hover
 /*FILTRES*/
 .filtres
 {
+    padding-left: 0;
     display: flex;  /*Pour qu'un bloc d'élément ne prenne pas toute la ligne*/
     align-items: baseline;   
     flex-wrap: wrap;    /*Passage à la ligne des enfants quand ça devient trop petit, pour éviter la déformation des éléments (logo + span dans bordure)*/
@@ -150,6 +155,11 @@ header div a:hover
     background-color: #deebff;  /*Arriere plan avec la bonne couleur*/
     border-radius: 50%; /*Cercle parfait*/
     margin: -2px;   /*Pour que la bordure ne soit pas visible sur/autour de l'icone*/
+}
+
+.filtres #icone_enfant i
+{
+    padding: 16px 19px 16px 19px;
 }
 
 .filtres h2
@@ -207,7 +217,7 @@ header div a:hover
     margin-bottom: 60px;
 }
 
-.resultats_recherche h2     
+.resultats_recherche .hebergements_proposes h2     
 {
     margin-bottom: 30px; /*Résoud le problème de la marge car sinon elle est de -0.4em*/
 }
@@ -218,7 +228,7 @@ header div a:hover
     gap: 16px;   /*La propriété CSS gap définit les espaces (gouttières) entre les lignes et les colonnes.*/
 }
 
-.resultats_recherche .hebergements_proposes a
+.resultats_recherche .hebergements_proposes #lien_afficher_plus
 {
     font-weight: bold;
     text-decoration:none;
@@ -246,38 +256,39 @@ header div a:hover
     margin: 8px;    /*Réduire l'espace*/
 }
 
-.resultats_recherche .hebergements_proposes .liste_logements article
+.resultats_recherche .hebergements_proposes .liste_logements .carte
 {
     flex-grow: 1;
+    text-decoration: none;
+    color: black;
 }
 
 
-
 /*Hébergement : pour tous*/
-.resultats_recherche .hebergements_proposes .liste_logements article
+.resultats_recherche .hebergements_proposes .liste_logements .carte
 {
     border-radius: 16px;     /* Arrondie sur l'hergement et ses infos*/
     background-color: #ffffff;
     padding: 6.4px;     /*Place autour de l'image, pour éviter que l'image soit collée aux bords*/
     width: 25%; /*Résolution pb des images qui n'étaient pas de meme dimension*/
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;  /*Ombres*/
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.2s;
 }
 
-.resultats_recherche .hebergements_proposes .liste_logements article a
+.resultats_recherche .hebergements_proposes .liste_logements #lien_afficher_plus
 {
     padding-left: 0;
 }
-.resultats_recherche .hebergements_proposes .liste_logements article img
+.resultats_recherche .hebergements_proposes .liste_logements .carte img
 {
     border-radius: 16px 16px 0px 0px; /*Arrondie sur l'image*/
     height: 200px;
     width: 100%;    /*Occupe la totalité de l'espace accordé*/
     object-fit: cover; /*Le contenu remplacé est dimensionné pour conserver son rapport hauteur/largeur tout en remplissant l'intégralité de la zone de contenu de l'élément*/
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.2s;
 }
 
-.resultats_recherche .hebergements_proposes .liste_logements article img:hover
+.resultats_recherche .hebergements_proposes .liste_logements .carte:hover
 {
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -303,10 +314,10 @@ header div a:hover
     display: flex;
     justify-content: space-between; /*L'icone se retrouve à droite*/
 }
-.resultats_recherche .hebergements_populaires .liste_logements_populaires article
+.resultats_recherche .hebergements_populaires .liste_logements_populaires .carte_populaire article
 {
     display: flex;  /*Flex car des éléments sont à droite, disposition différente des hébergements à Marseille*/
-    padding: 8px;
+    padding: 8px 8px 0px 8px;
     background-color: #ffffff;
     border-radius: 16px;
     min-width: 240px;   /*Pour ne pas que le texte ne s'étale trop en dessous */
@@ -324,22 +335,36 @@ header div a:hover
     height: 100%;   /*Occupe toute la place disponible*/
 }
 
-.resultats_recherche .hebergements_populaires .liste_logements_populaires img
+.resultats_recherche .hebergements_populaires .liste_logements_populaires a
+{
+    text-decoration: none;
+    color: black;
+}
+
+.resultats_recherche .hebergements_populaires .liste_logements_populaires .carte_populaire img
 {
     border-radius: 16px 0px 0px 16px; /*Arrondie sur l'image*/
     height: 200px;
     object-fit: cover;
     width: 200px;
+}
+
+.resultats_recherche .hebergements_populaires .liste_logements_populaires .carte_populaire
+{
     -webkit-transition-duration: 0.3s;
     transition-duration: 0.2s;
+}
+
+.resultats_recherche .hebergements_populaires .liste_logements_populaires .carte_populaire:hover
+{
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
 }
 
 .resultats_recherche .hebergements_populaires .liste_logements_populaires img:hover
 {
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    -webkit-transform: scale(1.03);
-    transform: scale(1.03);
 }
 
 .resultats_recherche .hebergements_populaires .liste_logements_populaires .informations_hebergement
@@ -479,6 +504,11 @@ header div a:hover
     border-radius: 0 0 16px 16px;
 }
 
+.activites_proposees h3
+{
+    font-size: 16px;
+}
+
 
 
 /*PARTIE FOOTER*/
@@ -524,15 +554,31 @@ footer > *
     }
 
     /*PARTIE EN TÊTE*/
+    header
+    {
+        margin-right: 0;
+    }
+
     #lien_hebergements
     {
         border-top: none;
+        width: 50%;
     }
 
-    header div a:hover
+    #lien_activites
+    {
+        width: 50%;
+    }
+
+    header a:hover
     {
         border-top: 4px solid transparent;  /*Barre transparente pour cacher la barre bleu du haut*/
         border-bottom: 4px solid #0065fc;   /*Création barre bleu en bas*/
+    }
+
+    header #inscription
+    {
+        order: -1;
     }
 
     div ul a
@@ -579,9 +625,9 @@ footer > *
     {
         flex-direction: column;
     }
-    .resultats_recherche .hebergements_proposes .liste_logements article
+    .resultats_recherche .hebergements_proposes .liste_logements .carte
     {
-        width: 100%;
+        width: 100%;    /*Sinon cela reste a 25% et occupe que 1/4 de l'espace disponible*/
     }
 
     /*PARTIE ACTIVITES*/
@@ -623,6 +669,14 @@ footer > *
 
 }
 
+@media(max-width: 450px)
+{
+    .resultats_recherche .hebergements_populaires .liste_logements_populaires .carte_populaire img
+    {
+        height: 150px;
+        width: 150px;
+    }
+}
 /*Pour pouvoir faire en sorte que le div 'les plus populaires' passent au dessus de 'hebergements à Marseille', j'utilise une Media Query
 L'utilisation de flex-wrap n'était pas possible car les proportions données (66% et 33%) étaient déséquilibrées*/
 @media(max-width: 1600px)
@@ -630,5 +684,15 @@ L'utilisation de flex-wrap n'était pas possible car les proportions données (6
     .resultats_recherche
     {
         flex-direction: column-reverse; /*Faire passer les plus populaires en 1er*/
+    }
+
+    .resultats_recherche .hebergements_populaires
+    {
+        padding: 18px;
+    }
+
+    .resultats_recherche .hebergements_populaires .liste_logements_populaires .carte_populaire article
+    {
+        padding: 8px;
     }
 }
