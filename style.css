@@ -64,17 +64,22 @@ header nav a
     border-top: 4px solid #0065fc;  /*Création d'une barre bleu en haut au passage de la souris*/
     color: #0065fc;
 }
-header nav a:hover
+#lien_activites:hover
 {
     border-top: 4px solid #0065fc;  /*Création d'une barre bleu en haut au passage de la souris*/
     color: #0065fc;
 }
 
-#inscription
+#lien_inscription
 {
     color: #0065fc;
     font-weight:bold;
-    margin-right: 0px;
+}
+
+#lien_inscription:hover
+{
+    color: #0065fc;
+    border-top: 4px solid #0065fc;
 }
 
 
@@ -577,6 +582,8 @@ footer > *
         /*text-align: center;*/
         justify-content: center;
         padding: 10px;
+        border-bottom: 4px solid #0065fc;   /*Création barre bleu en bas*/
+        border-bottom: 4px solid #f2f2f2;  /*Barre grise en version mobile lorsque rien n'est survolé*/
     }
 
     #lien_activites
@@ -586,17 +593,23 @@ footer > *
         /*text-align: center;*/
         justify-content: center;
         padding: 10px;
+        border-bottom: 4px solid #f2f2f2;  /*Barre grise en version mobile lorsque rien n'est survolé*/
     }
 
-    header ul a:hover
+    #lien_activites:hover
     {
-        border-top: 4px solid transparent;  /*Barre transparente pour cacher la barre bleu du haut*/
         border-bottom: 4px solid #0065fc;   /*Création barre bleu en bas*/
+        border-top: 4px solid transparent;
     }
 
-    header ul a
+    #logo
     {
-        border-bottom: 4px solid #f2f2f2 ;  /*Barre grise en version mobile lorsque rien n'est survolé*/
+        margin-left: 10px;
+    }
+
+    #lien_hebergements:hover
+    {
+        border-bottom: 4px solid #0065fc;   /*Création barre bleu en bas*/
     }
     
     header nav li
@@ -638,6 +651,7 @@ footer > *
         flex-direction: column;    /*Retour en colonnes*/
     }
 
+
     /*RESULTAT RECHERCHE : HEBERGEMENTS PROPOSES*/
     .resultats_recherche .hebergements_proposes .liste_logements
     {
@@ -646,6 +660,10 @@ footer > *
     .resultats_recherche .hebergements_proposes .liste_logements .carte
     {
         width: 100%;    /*Sinon cela reste a 25% et occupe que 1/4 de l'espace disponible*/
+    }
+    .resultats_recherche .hebergements_proposes .liste_logements .carte img 
+    {
+        height: 130px;
     }
 
     /*PARTIE ACTIVITES*/
@@ -685,6 +703,11 @@ footer > *
         flex-direction: column;
     }
 
+    footer > *
+    {
+        margin-bottom: -25px;
+    }
+
 }
 
 @media(max-width: 450px)
@@ -698,12 +721,28 @@ footer > *
     .resultats_recherche .hebergements_proposes
     {
         background-color: #ffffff;
+        padding: 10px 35px 10px 35px;
+        margin-bottom: 20px;
     }
 
     .resultats_recherche .hebergements_populaires
     {
         border-radius: 0px;
+        margin-bottom: 0px;
     }
+
+    
+    .resultats_recherche .hebergements_populaires .liste_logements_populaires .informations_hebergement 
+    {
+        padding: 3px;
+    }
+
+    .resultats_recherche .hebergements_populaires .liste_logements_populaires .carte_populaire img 
+    {
+        height: 150px;
+        width: 110px;
+    }
+
 }
 /*Pour pouvoir faire en sorte que le div 'les plus populaires' passent au dessus de 'hebergements à Marseille', j'utilise une Media Query
 L'utilisation de flex-wrap n'était pas possible car les proportions données (66% et 33%) étaient déséquilibrées*/
