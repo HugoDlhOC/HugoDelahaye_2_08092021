@@ -12,42 +12,45 @@ body
 
 main
 {
-    margin-left: 120px;
-    margin-right: 120px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
 /*PARTIE EN TÊTE*/
 header
 {
-    margin-left: 120px;
-    margin-right: 120px;
+    margin-left: 60px;
+    margin-right: 60px;
 }
 
-header
+header nav
 {
     display: flex;  /*Passage au flex*/
     align-items: center;    /*Centrer les éléments*/
-    justify-content: flex-end;
+    /*justify-content: flex-end;*/
     flex-wrap: wrap;    /*Permet de laisser les éléments s'écouler sur plusieurs lignes*/
     /*border: 3px solid transparent*/
-
 }
 
 #logo   /*ID donc #*/
 {
     margin-right: auto; /*Prend le + de place possible*/
-    position: absolute;
+    /*position: absolute;*/
     top: 22px;
     left: 20px;
+    cursor: pointer;
 }
 
 #menu_principal
 {
     display: flex;
     list-style-type: none;  /*Suppression des puces*/
+    align-items: center;
+    padding-left: 0px;
+    flex-wrap: wrap;
 }
 
-header a
+header nav a
 {
     padding: 32px;   /*Place occuppée par les 3 liens, a un impact sur la place occupée par le nav et le header*/
     text-decoration: none;  /*Suppression du texte souligné*/
@@ -61,7 +64,7 @@ header a
     border-top: 4px solid #0065fc;  /*Création d'une barre bleu en haut au passage de la souris*/
     color: #0065fc;
 }
-header a:hover
+header nav a:hover
 {
     border-top: 4px solid #0065fc;  /*Création d'une barre bleu en haut au passage de la souris*/
     color: #0065fc;
@@ -71,8 +74,8 @@ header a:hover
 {
     color: #0065fc;
     font-weight:bold;
+    margin-right: 0px;
 }
-
 
 
 /*PARTIE RECHERCHE*/
@@ -501,12 +504,13 @@ header a:hover
     background-color: white;
     margin-top: auto;/*Texte en bas, il va prendre le max de place qu'il peut en haut, utilisable avec flexBox*/
     width: 100%;    /*Le texte occupe toute la largeur (blanc)*/
-    border-radius: 0 0 16px 16px;
+    border-radius: 0 0 15px 15px;   /*Pour ne pas voir l'image derrière*/
 }
 
 .activites_proposees h3
 {
     font-size: 16px;
+    padding-left: 15px;
 }
 
 
@@ -553,37 +557,51 @@ footer > *
     margin-right: 0px;
     }
 
-    /*PARTIE EN TÊTE*/
+    /*HEADER*/
     header
     {
-        margin-right: 0;
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    #menu_principal
+    {
+        flex-basis: 100%;
+        order: 1;
+        /*margin: auto;*/
     }
 
     #lien_hebergements
     {
         border-top: none;
-        width: 50%;
+        display: flex;
+        /*text-align: center;*/
+        justify-content: center;
+        padding: 10px;
     }
 
     #lien_activites
     {
-        width: 50%;
+        border-top: none;
+        display: flex;
+        /*text-align: center;*/
+        justify-content: center;
+        padding: 10px;
     }
 
-    header a:hover
+    header ul a:hover
     {
         border-top: 4px solid transparent;  /*Barre transparente pour cacher la barre bleu du haut*/
         border-bottom: 4px solid #0065fc;   /*Création barre bleu en bas*/
     }
 
-    header #inscription
-    {
-        order: -1;
-    }
-
-    div ul a
+    header ul a
     {
         border-bottom: 4px solid #f2f2f2 ;  /*Barre grise en version mobile lorsque rien n'est survolé*/
+    }
+    
+    header nav li
+    {
+        flex-basis: 50%;
     }
 
     /*PARTIE RECHERCHE*/
@@ -675,6 +693,16 @@ footer > *
     {
         height: 150px;
         width: 150px;
+    }
+
+    .resultats_recherche .hebergements_proposes
+    {
+        background-color: #ffffff;
+    }
+
+    .resultats_recherche .hebergements_populaires
+    {
+        border-radius: 0px;
     }
 }
 /*Pour pouvoir faire en sorte que le div 'les plus populaires' passent au dessus de 'hebergements à Marseille', j'utilise une Media Query
