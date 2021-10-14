@@ -1,4 +1,5 @@
 
+/*****Police appliquée au site*****/
 @font-face {
     font-family: 'Raleway';
     src: url('ressources/polices/Raleway-VariableFont_wght.ttf');
@@ -10,15 +11,17 @@ body
     margin: 0;
 }
 
+/*****Marges définies pour l'ensemble de la page à part le header et le footer*/
 main
 {
     margin-left: 60px;
     margin-right: 60px;
 }
 
-/*PARTIE EN TÊTE*/
+/*__________HEADER__________*/
 header
 {
+    /*****Marges attribuées*****/
     margin-left: 60px;
     margin-right: 60px;
 }
@@ -27,173 +30,163 @@ header nav
 {
     display: flex;  /*Passage au flex*/
     align-items: center;    /*Centrer les éléments*/
-    /*justify-content: flex-end;*/
     flex-wrap: wrap;    /*Permet de laisser les éléments s'écouler sur plusieurs lignes*/
-    /*border: 3px solid transparent*/
 }
 
-#logo   /*ID donc #*/
+header nav a
 {
-    margin-right: auto; /*Prend le + de place possible*/
-    /*position: absolute;*/
-    top: 22px;
-    left: 20px;
+    padding: 32px;   /*Place occuppée par les 3 liens, a un impact sur la place occupée par le nav et le header (plus haut...)*/
+    text-decoration: none;  /*Suppression du texte souligné*/
+    color: #000;    /*Couleur noir et non violette*/
+    border-top: 4px solid transparent;
+}
+
+#logo 
+{
+    margin-right: auto; /*Prend le + de marge possible à droite, pour que hébergement, activités et s'inscrire se retrouve à droite*/
     cursor: pointer;
 }
 
 #menu_principal
 {
-    display: flex;
+    display: flex;  /*Le menu passe en flex, pour qu'ils se suivent l'un après l'autre sur la même ligne*/
     list-style-type: none;  /*Suppression des puces*/
-    align-items: center;
-    padding-left: 0px;
-    flex-wrap: wrap;
-}
-
-header nav a
-{
-    padding: 32px;   /*Place occuppée par les 3 liens, a un impact sur la place occupée par le nav et le header*/
-    text-decoration: none;  /*Suppression du texte souligné*/
-    color: #000;    /*Couleur noir et non violette*/
-    /*display: flex;*/
-    border-top: 4px solid transparent;
+    align-items: center;    /*Alignement des 2 éléments au centre*/
+    flex-wrap: wrap;    /*Autorisation au 2 éléments de passer à la ligne suivante si besoin (utilile pour notion de responsive)*/
 }
 
 #lien_hebergements
 {
-    border-top: 4px solid #0065fc;  /*Création d'une barre bleu en haut au passage de la souris*/
+    border-top: 4px solid #0065fc;  /*Création d'une barre bleu de base*/
     color: #0065fc;
 }
-#lien_activites:hover
+#lien_activites:hover, #lien_inscription:hover
 {
     border-top: 4px solid #0065fc;  /*Création d'une barre bleu en haut au passage de la souris*/
-    color: #0065fc;
+    color: #0065fc; /*Changement de couleur du texte au passage de la souris*/
 }
 
 #lien_inscription
 {
     color: #0065fc;
-    font-weight:bold;
-}
-
-#lien_inscription:hover
-{
-    color: #0065fc;
-    border-top: 4px solid #0065fc;
+    font-weight:bold;   /*Texte en gras de base*/
 }
 
 
-/*PARTIE RECHERCHE*/
-/*FORM RECHERCHE*/
-
-.form_recherche
+/*__________SECTION : RECHERCHE__________*/
+/*****Le bloc de recherche*****/
+.section_recherche .form_recherche
 {
     display: flex;  /*Colle tous les éléments, éviter de toucher à la marge*/
-    align-items: center;    /*Pour etre sur que tous les éléments soient alignés*/
-    margin-bottom: 16px;
+    align-items: center;    /*Pour etre sûr que tous les éléments soient alignés*/
+    margin-bottom: 16px;    /*Marge en bas*/
 }
 
-.recherche .form_recherche #position
+.section_recherche .form_recherche #icone_position
 {
     background-color: #f2f2f2;  /*Couleur de fond*/
     padding: 16px;   /*Place occupée par i*/
     border-radius: 12px 0px 0px 12px;    /*Lissage des bords de i, sens des aiguilles d'une montre*/
 }
 
-.recherche .form_recherche #position:hover
+.section_recherche .form_recherche #icone_position:hover
 {
-    background-color: #d3d3d3;
+    background-color: #d3d3d3;  /*Changement de couleur de l'arrière plan de l'icône au passage de la souris*/
     cursor: pointer;
 }
 
-.recherche .form_recherche input
+.section_recherche .form_recherche input
 {
-    border: 1px solid #f2f2f2;
-    padding: 16px;
+    border: 1px solid #f2f2f2;  /*Contour du champ de saisie*/
+    padding: 16px;  /*Place occupée par le champ de saisie*/
+    outline: none;  /*Suppression du cadre quand l'on saisie*/
 }
 
-.recherche .form_recherche input::placeholder   /*Modification des paramètres du placeholder de la saisie grâce au pseudo élément ::placeholder*/
+.section_recherche .form_recherche input::placeholder   /*Modification des paramètres du placeholder de la saisie grâce au pseudo élément ::placeholder*/
 {
     font-weight: bold;
     color: rgb(0, 0, 0);
+    font-size: 16px;
 }
 
-.recherche .form_recherche button
+.section_recherche .form_recherche button
 {
-    background-color: #0065fc;
-    color: #ffffff;
+    background-color: #0065fc;  /*L'arrière plan du bouton rechercher est bleu*/
+    color: #ffffff; /*Le texte du bouton rechercher est blanc*/
     font-weight: bold;
     border-radius: 0px 12px 12px 0px;
     padding: 16px;   /*Place occupée par le bouton*/
-    border: none;
+    border: none;   /*Pas de bordure*/
 }
 
-.recherche .form_recherche button:hover
+.section_recherche .form_recherche button:hover
 {
-    background-color: #1755b3;
+    background-color: #1755b3;  /*Quand on survole le bouton rechercher, la couleur change*/
     cursor: pointer;
 }
 
-.recherche .form_recherche #loupe
+.section_recherche .form_recherche #icone_loupe
 {
     display: none;  /*Pas d'affichage de la loupe quand on est en mode desktop*/
 }
 
-
-/*FILTRES*/
-.filtres
+/*****Les filtres*****/
+.zone_filtres
 {
-    padding-left: 0;
-    display: flex;  /*Pour qu'un bloc d'élément ne prenne pas toute la ligne*/
-    align-items: baseline;   
+    display: flex;  /*Les éléments s'alignent sur la même ligne (H2 et filtres)*/
+}
+
+.zone_filtres h2
+{
+    margin-right: 75px; /*Laisser de la place entre le H2 et les flitres*/
+}
+
+.menu_filtres
+{
+    padding-left: 0;    /*Pas de padding gauche*/
+    display: flex;  /*Pour que les éléments soient les uns à la suite des autres*/
     flex-wrap: wrap;    /*Passage à la ligne des enfants quand ça devient trop petit, pour éviter la déformation des éléments (logo + span dans bordure)*/
     list-style-type: none;  /*Suppression des puces*/
 }
 
-.filtres .texte_filtre   /*Tous les span de filtre*/
+.menu_filtres .texte_filtre   /*Tous les span de filtre*/
 {
-    font-weight: bold;
+    font-weight: bold;  /*Gras*/
     padding: 16px;   /*Agrandissement car texte trop serré*/
+}
+
+.menu_filtres .filtre_box
+{
+    border: 1px solid #d9d9d9;  /*Création de la bordure*/
+    margin-right: 16px;  /*Espacement entre les éléments*/
+    border-radius: 32px; /*Arrondissement de notre bordure*/
+    transition-duration: 0.2s;  /*Durée de la transition pour l'animation*/
+    margin-bottom: 16px;    /*Marge permettant quand les filtres se retrouvent les uns au dessus des autres de ne pas être sérés*/
+}
+
+.menu_filtres li:hover
+{
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;    /*Ombre au survol*/
+    transform: scale(1.05); /*Agrandissement de 5%*/
 }
 
 .icone_filtre i /*Toutes les icones*/
 {
-    color: #0065fc;
+    color: #0065fc; /*Couleur de l'icone bleu*/
     padding: 16px;   /*Taille du fond*/
     background-color: #deebff;  /*Arriere plan avec la bonne couleur*/
     border-radius: 50%; /*Cercle parfait*/
     margin: -2px;   /*Pour que la bordure ne soit pas visible sur/autour de l'icone*/
 }
 
-.filtres #icone_enfant i
+#icone_enfant i
 {
-    padding: 16px 19px 16px 19px;
-}
-
-.filtres h2
-{
-    margin-right: 75px; /*Faire passer les filtres en dessous du h2*/
-}
-.filtres .filtre_box
-{
-    border: 1px solid #d9d9d9;  /*Création de la bordure*/
-    margin-right: 16px;  /*Espacement entre les éléments*/
-    border-radius: 32px; /*Arrondissement de notre bordure*/
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.2s;
-    margin-bottom: 16px;
-}
-
-.filtres li:hover
-{
-    cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    -webkit-transform: scale(1.05);
-    transform: scale(1.05);
+    padding: 16px 19px 16px 19px;   /*Pour avoir un élément arrondi*/
 }
 
 
-/*ZONE INFOS*/
+/*****Zone infos*****/
 .infos
 {
     display: flex;  /*Pour que l'icone info et le texte se retrouvent ensenbles*/
@@ -203,231 +196,196 @@ header nav a
 #icone_info
 {
     color: #0065fc;
-    display: flex;
-    width: 24px;
-    height: 24px;
-    border: 1px solid #eeeeee;
-    border-radius: 50%;
-    align-items: center;
+    display: flex;  /*Pour gérer l'élément comme on le souhaite*/
+    width: 24px;    /*Largeur*/
+    height: 24px;   /*Hauteur*/
+    border: 1px solid #eeeeee;  /*Bordure autour de l'icone*/
+    border-radius: 50%; /*Arrondissement*/
+    align-items: center;    /*Pour qu'il soit bien centré*/
     justify-content: center;    /*Le logo i est cette fois ci vraiment au milieu*/
     margin-top: 32px;
     margin-bottom: 32px;
     margin-right: 15px;
 }
 
-/*RESULTATS RECHERCHE*/
-.resultats_recherche .hebergements_proposes
+/*__________RESULTATS RECHERCHE__________*/
+.section_resultats_recherche
 {
-    background-color: #f2f2f2;
+    display: flex;  /*La partie hébergements à Marseille et la partie les plus populaires sont au même niveau*/
+    gap: 16px;   /*La propriété CSS gap définit les espaces (gouttières) entre les 2 parties*/
+}
+
+/*****Hébergements à Marseille*****/
+.section_resultats_recherche .hebergements_proposes
+{
+    background-color: #f2f2f2;  /*Couleur de l'arrière plan*/
     flex-basis: 66%;    /*Occupe 2/3 de la page en horizontale*/
     border-radius: 16px; /*Arrondissement des bords*/
-    padding: 35px;
+    padding: 35px;  /*Place occupée par cette partie*/
     margin-bottom: 60px;
 }
 
-.resultats_recherche .hebergements_proposes h2     
+.section_resultats_recherche .hebergements_proposes h2     
 {
-    margin-bottom: 30px; /*Résoud le problème de la marge car sinon elle est de -0.4em*/
+    margin-bottom: 30px; /*Espacement entre le titre et les cartes*/
 }
 
-.resultats_recherche
+.section_resultats_recherche .hebergements_proposes #lien_afficher_plus
 {
-    display: flex;
-    gap: 16px;   /*La propriété CSS gap définit les espaces (gouttières) entre les lignes et les colonnes.*/
-}
-
-.resultats_recherche .hebergements_proposes #lien_afficher_plus
-{
-    font-weight: bold;
-    text-decoration:none;
+    font-weight: bold;  /*Gras*/
+    text-decoration:none;   /*Suppression du soulignement automatique des liens*/
     color: black;
 }
 
-/*Liste logements*/
-
-.resultats_recherche .hebergements_proposes .liste_logements
+/*-----Liste logements*/
+.section_resultats_recherche .hebergements_proposes .liste_logements
 {
-    display: flex;
+    display: flex;  /*Les éléments ne sont plus en colonne*/
     flex-wrap: wrap;    /*Les éléments peuvent s'étendre sur plusieurs lignes*/
-    gap : 16px;
-    justify-content:space-around;   /*Espace égal entre les éléments*/
-    margin-bottom: 30px;
+    gap : 16px; /*Goutières entre les cartes*/
+    margin-bottom: 30px;    /*Pour espacer les cartes du lien afficher plus*/
 }
 
-.resultats_recherche .hebergements_proposes .liste_logements h3
+.section_resultats_recherche .hebergements_proposes .liste_logements h3
 {
-    margin: 8px;    /*Réduire l'espace*/
+    margin: 8px;    /*Ajustement*/
 }
 
-.resultats_recherche .hebergements_proposes .liste_logements p
+.section_resultats_recherche .hebergements_proposes .liste_logements p
 {
-    margin: 8px;    /*Réduire l'espace*/
+    margin: 8px;    /*Ajustement*/
 }
 
-.resultats_recherche .hebergements_proposes .liste_logements .carte
+.section_resultats_recherche .hebergements_proposes .liste_logements .lien_carte_hebergement
 {
-    flex-grow: 1;
-    text-decoration: none;
-    color: black;
+    border-radius: 16px;     /* Arrondie sur la carte*/
+    background-color: #ffffff;  /*Arrière plan de la carte*/
+    padding: 6.4px;     /*Place autour de l'image, pour éviter que l'image ne soit collée aux bords*/
+    width: 25%; /*Les images sont de même dimension*/
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;  /*Ombres des cartes*/
+    transition-duration: 0.2s;  /*Durée de la transition pour l'animation au survol*/
+    flex-grow: 1;   /*Facteur de grossissement utilisé, pour que les cartes prennent la place disponible*/
+    text-decoration: none;  /*Supprime les soulignements des liens*/
+    color: black;   /*Change la couleur des liens*/
 }
 
-
-/*Hébergement : pour tous*/
-.resultats_recherche .hebergements_proposes .liste_logements .carte
-{
-    border-radius: 16px;     /* Arrondie sur l'hergement et ses infos*/
-    background-color: #ffffff;
-    padding: 6.4px;     /*Place autour de l'image, pour éviter que l'image soit collée aux bords*/
-    width: 25%; /*Résolution pb des images qui n'étaient pas de meme dimension*/
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;  /*Ombres*/
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.2s;
-}
-
-.resultats_recherche .hebergements_proposes .liste_logements #lien_afficher_plus
-{
-    padding-left: 0;
-}
-.resultats_recherche .hebergements_proposes .liste_logements .carte img
+.section_resultats_recherche .hebergements_proposes .liste_logements .lien_carte_hebergement img
 {
     border-radius: 16px 16px 0px 0px; /*Arrondie sur l'image*/
-    height: 200px;
+    height: 200px;  /*Hauteur de l'image*/
     width: 100%;    /*Occupe la totalité de l'espace accordé*/
-    object-fit: cover; /*Le contenu remplacé est dimensionné pour conserver son rapport hauteur/largeur tout en remplissant l'intégralité de la zone de contenu de l'élément*/
+    object-fit: cover; /*Le contenu est dimensionné pour conserver son rapport hauteur/largeur tout en remplissant l'intégralité de la zone de contenu de l'élément*/
 }
 
-.resultats_recherche .hebergements_proposes .liste_logements .carte:hover
+.section_resultats_recherche .hebergements_proposes .liste_logements .lien_carte_hebergement:hover
 {
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    -webkit-transform: scale(1.03);
-    transform: scale(1.03);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;    /*Ombre au survol sur la carte*/
+    transform: scale(1.03); /*Agrandissement de 3% de la carte*/
 }
 
-/*les + populaires (partie en avant sur la version smartphone)*/
-.resultats_recherche .hebergements_populaires
+/*****Les plus populaires*****/
+.section_resultats_recherche .hebergements_populaires
 {
-    background-color: #f2f2f2;
+    background-color: #f2f2f2;  /*Couleur de l'arrière plan*/
     flex-basis: 33%;    /*Occupe 1/3 de la page en horizontale*/
-    border-radius: 16px;
-    padding: 35px;
-    
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 60px;
+    border-radius: 16px;    /*Arrondie de la partie*/
+    padding: 35px;  /*Place occupée par la partie*/
+    margin-bottom: 60px;    /*Marge du bas de la partie*/
 
 }
-.resultats_recherche .hebergements_populaires h2
+.section_resultats_recherche .hebergements_populaires h2
 {
-    display: flex;
+    display: flex;  /*Pour pouvoir ajuster l'icone (flèche montante)*/
     justify-content: space-between; /*L'icone se retrouve à droite*/
 }
-.resultats_recherche .hebergements_populaires .liste_logements_populaires .carte_populaire article
+
+.section_resultats_recherche .hebergements_populaires .liste_hebergements_populaires .lien_carte_hebergement_populaire article
 {
     display: flex;  /*Flex car des éléments sont à droite, disposition différente des hébergements à Marseille*/
-    padding: 8px 8px 0px 8px;
-    background-color: #ffffff;
-    border-radius: 16px;
-    min-width: 240px;   /*Pour ne pas que le texte ne s'étale trop en dessous */
+    padding: 8px 8px 0px 8px;   /*Place occupée par la carte*/
+    background-color: #ffffff;  /*Arrière plan de la carte*/
+    border-radius: 16px;    /*Arrondissement de la carte*/
+    min-width: 240px;   /*Pour ne pas que le texte ne s'étale trop en dessous (en reduction de page max) */
     height: 100%;   /*Occupe toute la place disponible*/
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;  /*Ombres*/
 
 }
 
-.resultats_recherche .hebergements_populaires .liste_logements_populaires
+.section_resultats_recherche .hebergements_populaires .liste_hebergements_populaires /*Partie sans le titre H2*/
 {
     display: flex;  
     flex-direction: column; /*Les éléments passent en row quand on fait display flex, donc je les repasse en column*/
-    gap: 16px;   /*Espacement*/
-    border-left: 16px;
-    height: 100%;   /*Occupe toute la place disponible*/
+    gap: 16px;   /*Espacement entre les cartes*/
+    height: 100%;   /*La carte occupe toute la place disponible*/
 }
 
-.resultats_recherche .hebergements_populaires .liste_logements_populaires a
+.section_resultats_recherche .hebergements_populaires .liste_hebergements_populaires a
 {
-    text-decoration: none;
-    color: black;
+    text-decoration: none;  /*Pas de soulignement sur les liens*/
+    color: black;   /*Couleur désormais noir et non violette*/
 }
 
-.resultats_recherche .hebergements_populaires .liste_logements_populaires .carte_populaire img
+.section_resultats_recherche .hebergements_populaires .liste_hebergements_populaires .lien_carte_hebergement_populaire img
 {
     border-radius: 16px 0px 0px 16px; /*Arrondie sur l'image*/
-    height: 200px;
-    object-fit: cover;
-    width: 200px;
+    height: 200px;  /*Hauteur de 200px*/
+    object-fit: cover;  /*Le contenu est dimensionné pour conserver son rapport hauteur/largeur tout en remplissant l'intégralité de la zone de contenu de l'élément*/
+    width: 200px;   /*Largeur de 200px*/
 }
 
-.resultats_recherche .hebergements_populaires .liste_logements_populaires .carte_populaire
+.section_resultats_recherche .hebergements_populaires .liste_hebergements_populaires .lien_carte_hebergement_populaire
 {
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.2s;
+    transition-duration: 0.2s;  /*Durée de transition pour l'animation*/
 }
 
-.resultats_recherche .hebergements_populaires .liste_logements_populaires .carte_populaire:hover
+.section_resultats_recherche .hebergements_populaires .liste_hebergements_populaires .lien_carte_hebergement_populaire:hover
 {
-    -webkit-transform: scale(1.03);
-    transform: scale(1.03);
-}
-
-.resultats_recherche .hebergements_populaires .liste_logements_populaires img:hover
-{
+    transform: scale(1.03); /*Agrandissment de 3% de l'image*/
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;    /*Ombre au passage de la souris */
 }
 
-.resultats_recherche .hebergements_populaires .liste_logements_populaires .informations_hebergement
+.section_resultats_recherche .hebergements_populaires .liste_hebergements_populaires .informations_hebergement
 {
-    display: flex;  /*Pour gérer les emplacements des 3 éléments (h3, p, étoiles que l'on veut mettre en bas*/
-    flex-direction: column;
-    padding: 16px;
+    display: flex;  /*Pour gérer les emplacements des 3 éléments (h3, p, étoiles que l'on veut mettre en bas)*/
+    flex-direction: column; /*Row de base*/
+    padding: 16px;  /*Place occupée par cette partie*/
 }
 
-.resultats_recherche .hebergements_populaires .liste_logements_populaires h3
+.section_resultats_recherche .hebergements_populaires .liste_hebergements_populaires h3
 {
     margin: 8px;    
 }
 
-.resultats_recherche .hebergements_populaires .liste_logements_populaires p
+.section_resultats_recherche .hebergements_populaires .liste_hebergements_populaires p
 {
     margin: 8px; 
 }
 
-.resultats_recherche .hebergements_populaires .liste_logements_populaires .etoiles
+.section_resultats_recherche .hebergements_populaires .liste_hebergements_populaires .etoiles
 {
-    margin-top: auto;   /*Les étoiles sont en bas*/
+    margin-top: auto;   /*Les étoiles prennent toute la marge possible en haut, donc elles se retrouvent en bas*/
 }
 
-.resultats_recherche .etoiles_bleues i
+.section_resultats_recherche .etoiles_bleues i
 {
     color: #0065fc;
 }
 
-.resultats_recherche .etoiles_grises i
+.section_resultats_recherche .etoiles_grises i
 {
     color: #d9d9d9;
 }
 
 
-/*PARTIE ACTIVITES*/
-.activites_proposees .galerie a
+/*__________SECTION : ACTIVITES PROPOSEES__________*/
+.section_activites_proposees .galerie
 {
-    border-radius: 16px;
-    text-decoration: none;
-    color: black;
-}
-
-.activites_proposees h2
-{
-    margin-bottom: 32px;
-}
-
-.activites_proposees .galerie
-{
-    display: grid;
-    /*height: 100vh;*/
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    grid-template-areas: 
+    display: grid;  /*Utilisation d'une grille, donc 2 dimensions*/
+    grid-template-columns: repeat(4, 1fr);  /*Création de 4 colonnes*/
+    grid-template-rows: repeat(10, 1fr);    /*Création de 10 lignes*/
+    grid-template-areas:    /*Définition de qui va occuper quoi dans la grille*/
         "vieux_port         fort_de_pomegues        parc_national_des_calanques        notre_dame_de_la_garde"
         "vieux_port         fort_de_pomegues        parc_national_des_calanques        notre_dame_de_la_garde"
         "vieux_port         fort_de_pomegues        parc_national_des_calanques        notre_dame_de_la_garde"
@@ -439,72 +397,81 @@ header nav a
         "vieux_port         iles_du_frioul          parc_national_des_calanques        parc_longchamp"
         "vieux_port         iles_du_frioul          parc_national_des_calanques        parc_longchamp";
 
-    grid-gap: 32px; /*Espacement*/
-    margin-bottom: 50px;
+    grid-gap: 32px; /*Espacement entre les cartes (goutières)*/
+    margin-bottom: 50px;    /*Marge avant le footer*/
 
 }
-.galerie > *    /*Tous les enfants directs*/
+
+.galerie > *    /*Tous les enfants directs de galerie, donc les cartes*/
 {
-    background-size: cover;
-    display: flex;
-    margin-bottom: 0;
-    background-position: center;
+    background-size: cover; /*L'image est redimensionnée pour être aussi grande que possible et pour conserver ses proportions*/
+    display: flex;  /*Sinon les titres H3 se retrouvent en hau de la carte*/
+    background-position: center;    /*L'arrière plan est au centre*/
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;  /*Ombres*/
 }
 
 .galerie a
 {
-    -webkit-transition-duration: 0.3s;
-    transition-duration: 0.2s;
+    border-radius: 16px;    /*Contour de la carte arrondie*/
+    text-decoration: none;  /*Pas de soulignement*/
+    color: black;   /*Pas de couleur violette*/
+}
+
+.section_activites_proposees h2
+{
+    margin-bottom: 32px;    /*Espacement avec les cartes en dessous*/
+}
+
+.galerie a
+{
+    transition-duration: 0.2s;  /*Durée de la transition de l'animation*/
 }
 
 .galerie a:hover
 {
     cursor: pointer;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    -webkit-transform: scale(1.03);
-    transform: scale(1.03);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;    /*Ombre au survol*/
+    transform: scale(1.03); /*Agrandissement de la carte de 3%*/
 }
-
 
 #vieux_port
 {
-    grid-area: vieux_port;
-    background-image: url("ressources/images/activites/3_medium/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg");
-    height: 40rem;
+    grid-area: vieux_port;  /*On lui affecte ce nom pour l'utiliser dans la grille*/
+    background-image: url("ressources/images/activites/3_medium/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg"); /*Arrière plan de la carte*/
+    height: 640px;  /*Hauteur de 640px pour la plus grande carte, pas besoin de déterminer la hauteur des autres cartes, elles vont s'appuyer sur celle là*/
 }
 
 #fort_de_pomegues
 {
-    grid-area: fort_de_pomegues;
-    background-image: url("ressources/images/activites/3_medium/paul-hermann-QFTrLdQIRhI-unsplash.jpg");
+    grid-area: fort_de_pomegues;    /*On lui affecte ce nom pour l'utiliser dans la grille*/
+    background-image: url("ressources/images/activites/3_medium/paul-hermann-QFTrLdQIRhI-unsplash.jpg");    /*Arrière plan de la carte*/
 }
 
 #iles_du_frioul
 {
-    grid-area: iles_du_frioul;
-    background-image: url("ressources/images/activites/3_medium/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg");
+    grid-area: iles_du_frioul;  /*On lui affecte ce nom pour l'utiliser dans la grille*/
+    background-image: url("ressources/images/activites/3_medium/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg");    /*Arrière plan de la carte*/
 }
 
 #parc_national_des_calanques
 {
-    grid-area: parc_national_des_calanques;
-    background-image: url("ressources/images/activites/3_medium/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg");
+    grid-area: parc_national_des_calanques; /*On lui affecte ce nom pour l'utiliser dans la grille*/
+    background-image: url("ressources/images/activites/3_medium/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg");  /*Arrière plan de la carte*/
 }
 
 #notre_dame_de_la_garde
 {
-    grid-area: notre_dame_de_la_garde;
-    background-image: url("ressources/images/activites/3_medium/florian-wehde-xW9e8gdotxI-unsplash.jpg");
+    grid-area: notre_dame_de_la_garde;  /*On lui affecte ce nom pour l'utiliser dans la grille*/
+    background-image: url("ressources/images/activites/3_medium/florian-wehde-xW9e8gdotxI-unsplash.jpg");   /*Arrière plan de la carte*/
 }
 
 #parc_longchamp
 {
-    grid-area: parc_longchamp;
-    background-image: url("ressources/images/activites/3_medium/lena-paulin-wH2-EJoDcV0-unsplash.jpg");
+    grid-area: parc_longchamp;  /*On lui affecte ce nom pour l'utiliser dans la grille*/
+    background-image: url("ressources/images/activites/3_medium/lena-paulin-wH2-EJoDcV0-unsplash.jpg"); /*Arrière plan de la carte*/
 }
 
-.galerie .texte_item 
+.galerie .texte_carte
 {
     background-color: white;
     margin-top: auto;/*Texte en bas, il va prendre le max de place qu'il peut en haut, utilisable avec flexBox*/
@@ -512,10 +479,10 @@ header nav a
     border-radius: 0 0 15px 15px;   /*Pour ne pas voir l'image derrière*/
 }
 
-.activites_proposees h3
+.section_activites_proposees h3
 {
-    font-size: 16px;
-    padding-left: 15px;
+    font-size: 16px;    /*Redimensionnement du titre*/
+    padding-left: 15px; /*Décallage entre la bordure et le texte pour respecter la maquette*/
 }
 
 
@@ -523,46 +490,131 @@ header nav a
 /*PARTIE FOOTER*/
 footer
 {
-    background-color: #f2f2f2;
+    background-color: #f2f2f2;  /*Couleur d'arrière plan du footer*/
+    display: flex;  /*Les éléments sont en ligne*/
+    justify-content: space-between;     /*Les éléments ont un espace égal entre eux*/
+}
 
-    display: flex;
-    justify-content: space-between;
+footer ul
+{
+    padding-left: 0;    /*Suppression padding créé par les puces de la liste*/
 }
 
 footer li
 {
     list-style-type: none;  /*Suppression des puces*/
-    margin-bottom: 14px;
-}
-
-footer ul
-{
-    padding-left: 0;    /*Suppression padding créé par les points de la liste*/
+    margin-bottom: 14px;    /*Espacement entre les éléments*/
 }
 
 footer a
 {
-    color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0);    /*Supression couleur violette*/
     text-decoration: none;  /*Supression soulignement*/
 }
 
-footer > *
+footer > *  /*A tous les enfants de footer*/
 {
-    padding: 16px;
+    padding: 16px;  /*Place occupée par chaque enfant (3)*/
     flex-basis: 25%;    /*Place occupée par chacun*/
     margin-bottom: 40px;
 }
 
+@media(max-width: 400px)
+{
+    /*****Bloc de recherche*****/
+    .section_recherche .form_recherche
+    {
+        justify-content: flex-start;    /*Il se colle à gauche pour ne pas sortir de la page*/
+    }
 
-@media(max-width: 768px)  
+    .section_recherche .form_recherche input
+    {
+        padding: 15px 10px 15px 10px;   /*Reduction du padding du champs de saisi*/
+        width: 100%;    /*Cela permet au champs de saisi de se réduire*/
+    }
+}
+
+@media(max-width: 450px)
+{
+    /*****Cartes hébergements populaires*****/
+    .section_resultats_recherche .hebergements_populaires .liste_hebergements_populaires .lien_carte_hebergement_populaire img
+    {
+        /*Réduction des dimensions des images des cartes d'hébergement populaire*/
+        height: 150px;
+        width: 110px;
+    }
+
+    .section_resultats_recherche .hebergements_populaires
+    {
+        border-radius: 0px; /*Plus d'arrondissement*/
+        margin-bottom: 0px; /*Réduction de la marge*/
+    }
+
+    
+    .section_resultats_recherche .hebergements_populaires .liste_hebergements_populaires  .lien_carte_hebergement_populaire .informations_hebergement 
+    {
+        padding: 3px;   /*Réduction padding des infos des cartes d'hébergement populaires*/
+    }
+
+    /*****Cartes hébergements proposes*****/
+    .section_resultats_recherche .hebergements_proposes
+    {
+        background-color: #ffffff;  /*La couleur de l'arrière plan est désormais blanc*/
+        padding: 10px 35px 10px 35px;   /*Réajustement du padding*/
+        margin-bottom: 20px;    /*Réduction de la marge*/
+    }
+
+}
+@media(max-width: 500px) and (min-width: 400px)
+{
+    /*****Bloc de saisie*****/
+    .section_recherche .form_recherche
+    {
+        justify-content: center;    /*Le bloc est désormais au centre*/
+    }
+
+    .section_recherche .form_recherche input
+    {
+        padding: 15px 40px 15px 40px;   /*Réajustement du padding du champ de saisi*/
+    }
+}
+
+@media(max-width: 500px)
+{
+    /*****Bloc de saisie*****/
+    .texte_bouton_rechercher
+    {
+        display: none;  /*Le texte du bouton rechercher ne s'affiche plus*/
+    }
+
+    .section_recherche .form_recherche #icone_loupe
+    {
+    display:contents;  /*L'icone de la loupe s'affiche désormais pour remplacer le texte*/
+    padding: 9.6px;
+    }
+
+    .section_recherche .form_recherche #icone_position
+    {
+        padding: 16px;
+    }
+
+    .section_recherche .form_recherche button
+    {
+        border-radius: 12px;    /*Arrondissement des 4 bords*/
+        margin: -7px;   /*Pour que la loupe vienne sur l'espace du input*/
+    }
+}
+
+@media(max-width: 768px)  /*BREAKPOINT Tablettes*/
 {
     main
     {
-    margin-left: 0px;
-    margin-right: 0px;
+        /*Marges droites et gauches à 0 pour toutes les parties sauf le header et le footer*/
+        margin-left: 0px;
+        margin-right: 0px;
     }
 
-    /*HEADER*/
+    /*__________HEADER__________*/
     header
     {
         margin-left: 5px;
@@ -570,41 +622,32 @@ footer > *
     }
     #menu_principal
     {
-        flex-basis: 100%;
-        order: 1;
-        /*margin: auto;*/
+        flex-basis: 100%;   /*Le menu occupe tout ce qu'il peut*/
+        order: 1;   /*Le lien s'inscrire passe avant le menu*/
+        padding: 0px;   /*Pas d'espace à gauche*/
     }
 
     #lien_hebergements
     {
-        border-top: none;
-        display: flex;
-        /*text-align: center;*/
-        justify-content: center;
+        border-top: 4px solid transparent;  /*La bordure du haut dans la version desktop doit maintenant être cachée*/
+        display: flex;  /*Permet de faire des modifications*/
+        justify-content: center;    /*Organisation des éléments : ils s'alignent au centre du conteneur*/
         padding: 10px;
-        border-bottom: 4px solid #0065fc;   /*Création barre bleu en bas*/
-        border-bottom: 4px solid #f2f2f2;  /*Barre grise en version mobile lorsque rien n'est survolé*/
+        border-bottom: 4px solid #0065fc;   /*Création bordure bleu en bas*/
     }
 
     #lien_activites
     {
-        border-top: none;
-        display: flex;
-        /*text-align: center;*/
-        justify-content: center;
+        display: flex;  /*Permet de faire des modifications*/
+        justify-content: center;    /*Organisation des éléments : ils s'alignent au centre du conteneur*/
         padding: 10px;
         border-bottom: 4px solid #f2f2f2;  /*Barre grise en version mobile lorsque rien n'est survolé*/
     }
 
     #lien_activites:hover
     {
-        border-bottom: 4px solid #0065fc;   /*Création barre bleu en bas*/
-        border-top: 4px solid transparent;
-    }
-
-    #logo
-    {
-        margin-left: 10px;
+        border-bottom: 4px solid #0065fc;   /*Création barre bleu en bas au passage de la souris*/
+        border-top: 4px solid transparent;  /*Pour cacher la bordure bleu de la version desktop*/
     }
 
     #lien_hebergements:hover
@@ -612,66 +655,45 @@ footer > *
         border-bottom: 4px solid #0065fc;   /*Création barre bleu en bas*/
     }
     
+    #logo
+    {
+        margin-left: 10px;
+    }
+    
     header nav li
     {
-        flex-basis: 50%;
+        flex-basis: 50%;    /*Chaque élément du menu va prendre 50%*/
     }
 
-    /*PARTIE RECHERCHE*/
-    .recherche
+    /*__________SECTION : RECHERCHE__________*/
+    .section_recherche
     {
         margin-left: 32px;
         margin-right: 32px;
     }
 
-    .texte_bouton_rechercher
+    .section_recherche p
     {
-        display: none;
+        margin-bottom: 30px;
     }
 
-    .recherche .form_recherche #loupe
+    /*__________SECTION : RESULTATS RECHERCHE__________*/
+    /*****Hebergements proposés*****/
+    .section_resultats_recherche .hebergements_proposes .liste_logements .lien_carte_hebergement
     {
-    display:contents;  /*Affichage de la loupe*/
-    padding: 9.6px;
+        width: 100%;    /*Sinon les cartes occupent 25% chacune (2 groupe de 3 cartes)*/
+    }
+    .section_resultats_recherche .hebergements_proposes .liste_logements .lien_carte_hebergement img 
+    {
+        height: 130px;  /*Réduction de la hauteur des images*/
     }
 
-    .recherche .form_recherche #position
+    /*__________SECTION : ACTIVITES PROPOSEES__________*/
+    .section_activites_proposees .galerie
     {
-        padding: 15px;
-    }
-
-    .recherche .form_recherche input
-    {
-        padding: 15px;
-    }
-
-    /*RESULTAT RECHERCHE : HEBERGEMENT POPULAIRES*/
-    .resultats_recherche .hebergements_populaires .liste_logements_populaires
-    {
-        flex-direction: column;    /*Retour en colonnes*/
-    }
-
-
-    /*RESULTAT RECHERCHE : HEBERGEMENTS PROPOSES*/
-    .resultats_recherche .hebergements_proposes .liste_logements
-    {
-        flex-direction: column;
-    }
-    .resultats_recherche .hebergements_proposes .liste_logements .carte
-    {
-        width: 100%;    /*Sinon cela reste a 25% et occupe que 1/4 de l'espace disponible*/
-    }
-    .resultats_recherche .hebergements_proposes .liste_logements .carte img 
-    {
-        height: 130px;
-    }
-
-    /*PARTIE ACTIVITES*/
-    .activites_proposees .galerie
-    {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
-        grid-template-areas: 
+        grid-template-columns: 1fr; /*Une seule colonne désormais*/
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;    /*6 lignes désormais*/
+        grid-template-areas:    /*Réajustement de l'organisation de la grille avec cette nouvelle disposition*/
             "vieux_port"
             "fort_de_pomegues"
             "iles_du_frioul"
@@ -683,83 +705,55 @@ footer > *
 
     #vieux_port
     {
-        height: 15rem;
+        height: 240px;  /*La hauteur de la plus grande image est donnée, les autres images vont s'appuyer sur cette valeur*/
     }
 
-    .galerie > *
-    {
-        height: 15rem;
-    }
-
-    .activites_proposees
+    .section_activites_proposees
     {
         margin-left: 32px;
         margin-right: 32px;
     }
 
-    /*PARTIE FOOTER*/
+    /*__________FOOTER__________*/
     footer
     {
-        flex-direction: column;
+        flex-direction: column; /*Changement de disposition*/
     }
 
-    footer > *
+    footer > *  /*A tous les enfants de footer (les 3 nav*/
     {
-        margin-bottom: -25px;
+        margin-bottom: 0px; 
     }
 
 }
 
-@media(max-width: 450px)
+@media(max-width: 1200px)
 {
-    .resultats_recherche .hebergements_populaires .liste_logements_populaires .carte_populaire img
+    .zone_filtres
     {
-        height: 150px;
-        width: 150px;
+        display: block; /*Passage en display block pour que les filtres passent en dessous du titre H2 Filtres*/
     }
-
-    .resultats_recherche .hebergements_proposes
-    {
-        background-color: #ffffff;
-        padding: 10px 35px 10px 35px;
-        margin-bottom: 20px;
-    }
-
-    .resultats_recherche .hebergements_populaires
-    {
-        border-radius: 0px;
-        margin-bottom: 0px;
-    }
-
-    
-    .resultats_recherche .hebergements_populaires .liste_logements_populaires .informations_hebergement 
-    {
-        padding: 3px;
-    }
-
-    .resultats_recherche .hebergements_populaires .liste_logements_populaires .carte_populaire img 
-    {
-        height: 150px;
-        width: 110px;
-    }
-
 }
+
 /*Pour pouvoir faire en sorte que le div 'les plus populaires' passent au dessus de 'hebergements à Marseille', j'utilise une Media Query
 L'utilisation de flex-wrap n'était pas possible car les proportions données (66% et 33%) étaient déséquilibrées*/
 @media(max-width: 1600px)
 {
-    .resultats_recherche
+    /*__________SECTION : RESULTATS RECHERCHE__________*/
+    .section_resultats_recherche
     {
         flex-direction: column-reverse; /*Faire passer les plus populaires en 1er*/
     }
 
-    .resultats_recherche .hebergements_populaires
+    /*****Hebergements populaires*****/
+    .section_resultats_recherche .hebergements_populaires
     {
-        padding: 18px;
+        padding: 18px;  /*Réajustement du padding interne*/
     }
 
-    .resultats_recherche .hebergements_populaires .liste_logements_populaires .carte_populaire article
+    .section_resultats_recherche .hebergements_populaires .liste_hebergements_populaires .lien_carte_hebergement_populaire article
     {
-        padding: 8px;
+        padding: 8px;   /*Reajustement padding des articles*/
     }
 }
+
