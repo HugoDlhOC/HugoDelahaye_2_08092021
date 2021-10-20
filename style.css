@@ -5,10 +5,24 @@
     src: url('ressources/polices/Raleway-VariableFont_wght.ttf');
 }
 
+/*****Couleurs utilisées dans le site*****/
+html
+{
+    --couleur-bleu-site: #0065fc;
+    --couleur-gris-fond: #f2f2f2;
+    --couleur-blanc: #ffffff;
+}
+
 body
 {
     font-family: 'Raleway', Arial, Helvetica, sans-serif;
     margin: 0;
+}
+
+.page_sans_footer
+{
+    max-width: 1920px;
+    margin: auto;
 }
 
 /*****Marges définies pour l'ensemble de la page à part le header et le footer*/
@@ -21,6 +35,7 @@ main
 /*__________HEADER__________*/
 header
 {
+    max-width: 1920px;
     /*****Marges attribuées*****/
     margin-left: 60px;
     margin-right: 60px;
@@ -57,24 +72,29 @@ header nav a
 
 #lien_hebergements
 {
-    border-top: 4px solid #0065fc;  /*Création d'une barre bleu de base*/
-    color: #0065fc;
+    border-top: 4px solid var(--couleur-bleu-site);  /*Création d'une barre bleu de base*/
+    color: var(--couleur-bleu-site);
 }
 #lien_activites:hover, #lien_inscription:hover
 {
-    border-top: 4px solid #0065fc;  /*Création d'une barre bleu en haut au passage de la souris*/
-    color: #0065fc; /*Changement de couleur du texte au passage de la souris*/
+    border-top: 4px solid var(--couleur-bleu-site);  /*Création d'une barre bleu en haut au passage de la souris*/
+    color: var(--couleur-bleu-site); /*Changement de couleur du texte au passage de la souris*/
 }
 
 #lien_inscription
 {
-    color: #0065fc;
+    color: var(--couleur-bleu-site);
     font-weight:bold;   /*Texte en gras de base*/
 }
 
 
 /*__________SECTION : RECHERCHE__________*/
 /*****Le bloc de recherche*****/
+.section_recherche
+{
+    max-width: 1920px;
+}
+
 .section_recherche .form_recherche
 {
     display: flex;  /*Colle tous les éléments, éviter de toucher à la marge*/
@@ -84,7 +104,7 @@ header nav a
 
 .section_recherche .form_recherche #icone_position
 {
-    background-color: #f2f2f2;  /*Couleur de fond*/
+    background-color: var(--couleur-gris-fond);  /*Couleur de fond*/
     padding: 16px;   /*Place occupée par i*/
     border-radius: 12px 0px 0px 12px;    /*Lissage des bords de i, sens des aiguilles d'une montre*/
 }
@@ -97,7 +117,7 @@ header nav a
 
 .section_recherche .form_recherche input
 {
-    border: 1px solid #f2f2f2;  /*Contour du champ de saisie*/
+    border: 1px solid var(--couleur-gris-fond);  /*Contour du champ de saisie*/
     padding: 16px;  /*Place occupée par le champ de saisie*/
     outline: none;  /*Suppression du cadre quand l'on saisie*/
 }
@@ -111,8 +131,8 @@ header nav a
 
 .section_recherche .form_recherche button
 {
-    background-color: #0065fc;  /*L'arrière plan du bouton rechercher est bleu*/
-    color: #ffffff; /*Le texte du bouton rechercher est blanc*/
+    background-color: var(--couleur-bleu-site);  /*L'arrière plan du bouton rechercher est bleu*/
+    color: var(--couleur-blanc); /*Le texte du bouton rechercher est blanc*/
     font-weight: bold;
     border-radius: 0px 12px 12px 0px;
     padding: 16px;   /*Place occupée par le bouton*/
@@ -173,7 +193,7 @@ header nav a
 
 .icone_filtre i /*Toutes les icones*/
 {
-    color: #0065fc; /*Couleur de l'icone bleu*/
+    color: var(--couleur-bleu-site); /*Couleur de l'icone bleu*/
     padding: 16px;   /*Taille du fond*/
     background-color: #deebff;  /*Arriere plan avec la bonne couleur*/
     border-radius: 50%; /*Cercle parfait*/
@@ -190,12 +210,12 @@ header nav a
 .infos
 {
     display: flex;  /*Pour que l'icone info et le texte se retrouvent ensenbles*/
-    align-items: center;
+    align-items: baseline;  /*Alignement des éléments à la ligne de base du conteneur*/
 }
 
 #icone_info
 {
-    color: #0065fc;
+    color: var(--couleur-bleu-site);
     display: flex;  /*Pour gérer l'élément comme on le souhaite*/
     width: 24px;    /*Largeur*/
     height: 24px;   /*Hauteur*/
@@ -208,9 +228,15 @@ header nav a
     margin-right: 15px;
 }
 
+.fa-info::before
+{
+    padding: 16px;  /*Pour éviter que le contour arrondi de l'icone ne vienne s'applatir sur les côtés*/
+}
+
 /*__________RESULTATS RECHERCHE__________*/
 .section_resultats_recherche
 {
+    max-width: 1920px;
     display: flex;  /*La partie hébergements à Marseille et la partie les plus populaires sont au même niveau*/
     gap: 16px;   /*La propriété CSS gap définit les espaces (gouttières) entre les 2 parties*/
 }
@@ -218,7 +244,7 @@ header nav a
 /*****Hébergements à Marseille*****/
 .section_resultats_recherche .hebergements_proposes
 {
-    background-color: #f2f2f2;  /*Couleur de l'arrière plan*/
+    background-color: var(--couleur-gris-fond);  /*Couleur de l'arrière plan*/
     flex-basis: 66%;    /*Occupe 2/3 de la page en horizontale*/
     border-radius: 16px; /*Arrondissement des bords*/
     padding: 35px;  /*Place occupée par cette partie*/
@@ -259,7 +285,7 @@ header nav a
 .section_resultats_recherche .hebergements_proposes .liste_logements .lien_carte_hebergement
 {
     border-radius: 16px;     /* Arrondie sur la carte*/
-    background-color: #ffffff;  /*Arrière plan de la carte*/
+    background-color: var(--couleur-blanc);  /*Arrière plan de la carte*/
     padding: 6.4px;     /*Place autour de l'image, pour éviter que l'image ne soit collée aux bords*/
     width: 25%; /*Les images sont de même dimension*/
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;  /*Ombres des cartes*/
@@ -287,7 +313,7 @@ header nav a
 /*****Les plus populaires*****/
 .section_resultats_recherche .hebergements_populaires
 {
-    background-color: #f2f2f2;  /*Couleur de l'arrière plan*/
+    background-color: var(--couleur-gris-fond);  /*Couleur de l'arrière plan*/
     flex-basis: 33%;    /*Occupe 1/3 de la page en horizontale*/
     border-radius: 16px;    /*Arrondie de la partie*/
     padding: 35px;  /*Place occupée par la partie*/
@@ -304,7 +330,7 @@ header nav a
 {
     display: flex;  /*Flex car des éléments sont à droite, disposition différente des hébergements à Marseille*/
     padding: 8px 8px 0px 8px;   /*Place occupée par la carte*/
-    background-color: #ffffff;  /*Arrière plan de la carte*/
+    background-color: var(--couleur-blanc);  /*Arrière plan de la carte*/
     border-radius: 16px;    /*Arrondissement de la carte*/
     min-width: 240px;   /*Pour ne pas que le texte ne s'étale trop en dessous (en reduction de page max) */
     height: 100%;   /*Occupe toute la place disponible*/
@@ -370,7 +396,7 @@ header nav a
 
 .section_resultats_recherche .etoiles_bleues i
 {
-    color: #0065fc;
+    color: var(--couleur-bleu-site);
 }
 
 .section_resultats_recherche .etoiles_grises i
@@ -380,6 +406,11 @@ header nav a
 
 
 /*__________SECTION : ACTIVITES PROPOSEES__________*/
+.section_activites_proposees
+{
+    max-width: 1920px;
+}
+
 .section_activites_proposees .galerie
 {
     display: grid;  /*Utilisation d'une grille, donc 2 dimensions*/
@@ -473,7 +504,7 @@ header nav a
 
 .galerie .texte_carte
 {
-    background-color: white;
+    background-color: var(--couleur-blanc);
     margin-top: auto;/*Texte en bas, il va prendre le max de place qu'il peut en haut, utilisable avec flexBox*/
     width: 100%;    /*Le texte occupe toute la largeur (blanc)*/
     border-radius: 0 0 15px 15px;   /*Pour ne pas voir l'image derrière*/
@@ -490,7 +521,7 @@ header nav a
 /*PARTIE FOOTER*/
 footer
 {
-    background-color: #f2f2f2;  /*Couleur d'arrière plan du footer*/
+    background-color: var(--couleur-gris-fond);  /*Couleur d'arrière plan du footer*/
     display: flex;  /*Les éléments sont en ligne*/
     justify-content: space-between;     /*Les éléments ont un espace égal entre eux*/
 }
@@ -559,7 +590,7 @@ footer > *  /*A tous les enfants de footer*/
     /*****Cartes hébergements proposes*****/
     .section_resultats_recherche .hebergements_proposes
     {
-        background-color: #ffffff;  /*La couleur de l'arrière plan est désormais blanc*/
+        background-color: var(--couleur-blanc);  /*La couleur de l'arrière plan est désormais blanc*/
         padding: 10px 35px 10px 35px;   /*Réajustement du padding*/
         margin-bottom: 20px;    /*Réduction de la marge*/
     }
@@ -633,7 +664,7 @@ footer > *  /*A tous les enfants de footer*/
         display: flex;  /*Permet de faire des modifications*/
         justify-content: center;    /*Organisation des éléments : ils s'alignent au centre du conteneur*/
         padding: 10px;
-        border-bottom: 4px solid #0065fc;   /*Création bordure bleu en bas*/
+        border-bottom: 4px solid var(--couleur-bleu-site);   /*Création bordure bleu en bas*/
     }
 
     #lien_activites
@@ -641,18 +672,18 @@ footer > *  /*A tous les enfants de footer*/
         display: flex;  /*Permet de faire des modifications*/
         justify-content: center;    /*Organisation des éléments : ils s'alignent au centre du conteneur*/
         padding: 10px;
-        border-bottom: 4px solid #f2f2f2;  /*Barre grise en version mobile lorsque rien n'est survolé*/
+        border-bottom: 4px solid var(--couleur-gris-fond);  /*Barre grise en version mobile lorsque rien n'est survolé*/
     }
 
     #lien_activites:hover
     {
-        border-bottom: 4px solid #0065fc;   /*Création barre bleu en bas au passage de la souris*/
+        border-bottom: 4px solid var(--couleur-bleu-site);   /*Création barre bleu en bas au passage de la souris*/
         border-top: 4px solid transparent;  /*Pour cacher la bordure bleu de la version desktop*/
     }
 
     #lien_hebergements:hover
     {
-        border-bottom: 4px solid #0065fc;   /*Création barre bleu en bas*/
+        border-bottom: 4px solid var(--couleur-bleu-site);   /*Création barre bleu en bas*/
     }
     
     #logo
@@ -756,4 +787,6 @@ L'utilisation de flex-wrap n'était pas possible car les proportions données (6
         padding: 8px;   /*Reajustement padding des articles*/
     }
 }
+
+
 
