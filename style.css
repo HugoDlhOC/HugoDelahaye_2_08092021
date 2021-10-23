@@ -53,7 +53,7 @@ header nav a
     padding: 32px;   /*Place occuppée par les 3 liens, a un impact sur la place occupée par le nav et le header (plus haut...)*/
     text-decoration: none;  /*Suppression du texte souligné*/
     color: #000;    /*Couleur noir et non violette*/
-    border-top: 4px solid transparent;
+    border-top: 3px solid transparent;
 }
 
 #logo 
@@ -72,12 +72,12 @@ header nav a
 
 #lien_hebergements
 {
-    border-top: 4px solid var(--couleur-bleu-site);  /*Création d'une barre bleu de base*/
+    border-top: 3px solid var(--couleur-bleu-site);  /*Création d'une barre bleu de base*/
     color: var(--couleur-bleu-site);
 }
 #lien_activites:hover, #lien_inscription:hover
 {
-    border-top: 4px solid var(--couleur-bleu-site);  /*Création d'une barre bleu en haut au passage de la souris*/
+    border-top: 3px solid var(--couleur-bleu-site);  /*Création d'une barre bleu en haut au passage de la souris*/
     color: var(--couleur-bleu-site); /*Changement de couleur du texte au passage de la souris*/
 }
 
@@ -85,6 +85,7 @@ header nav a
 {
     color: var(--couleur-bleu-site);
     font-weight:bold;   /*Texte en gras de base*/
+    padding-top: 35px;
 }
 
 
@@ -660,11 +661,11 @@ footer > *  /*A tous les enfants de footer*/
 
     #lien_hebergements
     {
-        border-top: 4px solid transparent;  /*La bordure du haut dans la version desktop doit maintenant être cachée*/
+        border-top: 3px solid transparent;  /*La bordure du haut dans la version desktop doit maintenant être cachée*/
         display: flex;  /*Permet de faire des modifications*/
         justify-content: center;    /*Organisation des éléments : ils s'alignent au centre du conteneur*/
         padding: 10px;
-        border-bottom: 4px solid var(--couleur-bleu-site);   /*Création bordure bleu en bas*/
+        border-bottom: 3px solid var(--couleur-bleu-site);   /*Création bordure bleu en bas*/
     }
 
     #lien_activites
@@ -672,18 +673,18 @@ footer > *  /*A tous les enfants de footer*/
         display: flex;  /*Permet de faire des modifications*/
         justify-content: center;    /*Organisation des éléments : ils s'alignent au centre du conteneur*/
         padding: 10px;
-        border-bottom: 4px solid var(--couleur-gris-fond);  /*Barre grise en version mobile lorsque rien n'est survolé*/
+        border-bottom: 3px solid var(--couleur-gris-fond);  /*Barre grise en version mobile lorsque rien n'est survolé*/
     }
 
     #lien_activites:hover
     {
-        border-bottom: 4px solid var(--couleur-bleu-site);   /*Création barre bleu en bas au passage de la souris*/
-        border-top: 4px solid transparent;  /*Pour cacher la bordure bleu de la version desktop*/
+        border-bottom: 3px solid var(--couleur-bleu-site);   /*Création barre bleu en bas au passage de la souris*/
+        border-top: 3px solid transparent;  /*Pour cacher la bordure bleu de la version desktop*/
     }
 
     #lien_hebergements:hover
     {
-        border-bottom: 4px solid var(--couleur-bleu-site);   /*Création barre bleu en bas*/
+        border-bottom: 3px solid var(--couleur-bleu-site);   /*Création barre bleu en bas*/
     }
     
     #logo
