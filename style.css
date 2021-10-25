@@ -35,7 +35,6 @@ main
 /*__________HEADER__________*/
 header
 {
-    max-width: 1920px;
     /*****Marges attribuées*****/
     margin-left: 60px;
     margin-right: 60px;
@@ -91,11 +90,6 @@ header nav a
 
 /*__________SECTION : RECHERCHE__________*/
 /*****Le bloc de recherche*****/
-.section_recherche
-{
-    max-width: 1920px;
-}
-
 .section_recherche .form_recherche
 {
     display: flex;  /*Colle tous les éléments, éviter de toucher à la marge*/
@@ -237,7 +231,6 @@ header nav a
 /*__________RESULTATS RECHERCHE__________*/
 .section_resultats_recherche
 {
-    max-width: 1920px;
     display: flex;  /*La partie hébergements à Marseille et la partie les plus populaires sont au même niveau*/
     gap: 16px;   /*La propriété CSS gap définit les espaces (gouttières) entre les 2 parties*/
 }
@@ -407,11 +400,6 @@ header nav a
 
 
 /*__________SECTION : ACTIVITES PROPOSEES__________*/
-.section_activites_proposees
-{
-    max-width: 1920px;
-}
-
 .section_activites_proposees .galerie
 {
     display: grid;  /*Utilisation d'une grille, donc 2 dimensions*/
