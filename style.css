@@ -318,6 +318,7 @@ header nav a
 {
     display: flex;  /*Pour pouvoir ajuster l'icone (flèche montante)*/
     justify-content: space-between; /*L'icone se retrouve à droite*/
+    margin-bottom: 32px;
 }
 
 .section_resultats_recherche .hebergements_populaires .liste_hebergements_populaires .lien_carte_hebergement_populaire article
@@ -336,7 +337,7 @@ header nav a
 {
     display: flex;  
     flex-direction: column; /*Les éléments passent en row quand on fait display flex, donc je les repasse en column*/
-    gap: 16px;   /*Espacement entre les cartes*/
+    gap: 30px;   /*Espacement entre les cartes*/
     height: 100%;   /*La carte occupe toute la place disponible*/
 }
 
@@ -552,6 +553,12 @@ footer > *  /*A tous les enfants de footer*/
         padding: 15px 10px 15px 10px;   /*Reduction du padding du champs de saisi*/
         width: 100%;    /*Cela permet au champs de saisi de se réduire*/
     }
+
+    /*****Hebergements populaires*****/
+    .section_resultats_recherche .hebergements_populaires .liste_hebergements_populaires .lien_carte_hebergement_populaire img
+    {
+        width: 110px;   /*Largeur de 135px*/
+    }
 }
 
 @media(max-width: 450px)
@@ -625,7 +632,7 @@ footer > *  /*A tous les enfants de footer*/
     }
 }
 
-@media(max-width: 768px)  /*BREAKPOINT Tablettes*/
+@media(max-width: 768px)  /*BREAKPOINT*/
 {
     main
     {
@@ -753,12 +760,7 @@ footer > *  /*A tous les enfants de footer*/
     {
         display: block; /*Passage en display block pour que les filtres passent en dessous du titre H2 Filtres*/
     }
-}
 
-/*Pour pouvoir faire en sorte que le div 'les plus populaires' passent au dessus de 'hebergements à Marseille', j'utilise une Media Query
-L'utilisation de flex-wrap n'était pas possible car les proportions données (66% et 33%) étaient déséquilibrées*/
-@media(max-width: 1600px)
-{
     /*__________SECTION : RESULTATS RECHERCHE__________*/
     .section_resultats_recherche
     {
@@ -774,6 +776,15 @@ L'utilisation de flex-wrap n'était pas possible car les proportions données (6
     .section_resultats_recherche .hebergements_populaires .liste_hebergements_populaires .lien_carte_hebergement_populaire article
     {
         padding: 8px;   /*Reajustement padding des articles*/
+    }
+}
+
+/*Réajustement de la taille des images*/
+@media(max-width: 1600px) and (min-width: 1200px)
+{
+    .section_resultats_recherche .hebergements_populaires .liste_hebergements_populaires .lien_carte_hebergement_populaire img
+    {
+        width: 135px;   /*Largeur de 135px*/
     }
 }
 
